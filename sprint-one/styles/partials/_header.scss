@@ -50,3 +50,23 @@
     }
 }
 
+@include medium {
+    .page-header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        &__logo {
+            height: 60%;
+            width: 20%;
+            margin: 0 5%;
+            // margin-left: 5%;
+        }
+
+        &__navigation {
+            width: 30%;
+            height: 100%;
+        }
+    }
+    
+}
