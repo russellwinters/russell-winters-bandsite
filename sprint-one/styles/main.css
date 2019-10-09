@@ -103,7 +103,7 @@ body {
             align-items: center;
   }
   .page-header__logo {
-    height: 60%;
+    height: 50%;
     width: 20%;
     margin: 0 5%;
   }
@@ -121,6 +121,7 @@ body {
     margin: unset;
     padding-left: 12.5%;
     width: 25%;
+    height: 60%;
   }
   .page-header__navigation-list-item {
     width: 18.5%;
@@ -132,7 +133,7 @@ body {
 }
 
 .hero {
-  height: 35vh;
+  height: 183px;
   width: 100%;
   background-image: url(../assets/images/hero-image.jfif);
   background-size: 120% auto;
@@ -156,6 +157,27 @@ body {
   font-size: 24px;
   line-height: 32px;
   font-family: "avenir-bold";
+}
+
+@media only screen and (min-width: 768px) {
+  .hero {
+    height: 400px;
+  }
+  .hero__text {
+    font-size: 60px;
+    line-height: 68px;
+    font-family: "avenir-bold";
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero {
+    height: 670px;
+    width: 100%;
+  }
+  .hero__text {
+    margin-left: 12.5%;
+  }
 }
 
 .about-artists {

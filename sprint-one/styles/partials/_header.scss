@@ -57,10 +57,9 @@
         align-items: center;
 
         &__logo {
-            height: 60%;
+            height: 50%;
             width: 20%;
             margin: 0 5%;
-            // margin-left: 5%;
         }
 
         &__navigation {
@@ -78,6 +77,7 @@
             margin: unset;
             padding-left: 12.5%;
             width: 25%;
+            height: 60%;
         }
 
         &__navigation {

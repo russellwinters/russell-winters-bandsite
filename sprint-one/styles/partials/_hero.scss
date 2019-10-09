@@ -1,5 +1,5 @@
 .hero {
-    height: 35vh;
+    height: 183px;
     width: 100%;
     background-image: url(../assets/images/hero-image.jfif);
     background-size: 120% auto;
@@ -21,4 +21,27 @@
         color: $white;
         @include mobile-header;
     }
+}
+
+@include medium {
+    .hero {
+        height: 400px;
+        
+        &__text {
+            @include hero-header;
+        }
+    }
+}
+
+@include large {
+    .hero {
+        height: 670px;
+        width: 100%;
+    
+        &__text {
+            margin-left: 12.5%;
+        }
+    }
+
+    
 }
