@@ -1,0 +1,47 @@
+.about-artists {
+    width: 90%;
+    margin: 0 auto;
+    background-color: $white;
+
+    &__heading {
+        margin: 32px 0 24px 0;
+        text-transform: capitalize;
+        @include mobile-header;
+    } 
+
+    &__image {
+        width: 100%;
+    }
+
+    &__quote-text,
+    &__quote-citation {
+        @include mobile-subheader;
+    } 
+
+    &__quote-citation {
+        margin-top: 32px;
+    }
+
+    &__bio {
+        margin-top: 40px;
+        width: 90%;
+
+        &-heading {
+            margin-bottom: 24px;
+            @include mobile-subheader;
+        }
+
+        &-content {
+            @include mobile-paragraph-lists;
+            
+            &:first-of-type {
+                margin-bottom: 24px;
+            }
+
+            &:not(:first-of-type) {
+                margin-bottom: 40px;
+            }
+        }
+
+    }
+}

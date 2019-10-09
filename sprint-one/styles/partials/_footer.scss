@@ -1,0 +1,65 @@
+.footer {
+    width: 100%;
+    color: $alabaster;
+    background-color: $black;
+
+    &__heading {
+        width: 90%;
+        margin: 0 auto;
+        padding-bottom: 24px;
+
+        &-caption {
+            @include mobile-header;
+            // !following styles to compensate for typography differences from mockups
+            padding: 24px 0;
+        }
+
+        &-media {
+            display: flex;
+            justify-content: space-between;
+            width: 40%;
+        }
+
+        &-image {
+            display: none;
+        }
+    }
+
+    &-flex {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+
+        &__container {
+            margin-bottom: 24px;
+        
+            &-info {
+                margin-bottom: 8px;
+                @include mobile-paragraph-lists;
+            }
+
+            &-info--bold {
+                @include mobile-subheader;
+
+            }
+            
+            &-mailto {
+                text-decoration: none;
+                color: $alabaster;
+                @include mobile-paragraph-lists;
+            }
+        }
+
+    }
+
+    &__copyright {
+        width: 65%;
+        font-family: $avenir;
+        font-weight: 200;
+        margin-left: 5%;
+        font-size: 13px;
+        padding-bottom: 40px;
+    }
+}
+    
