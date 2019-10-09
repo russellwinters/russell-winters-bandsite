@@ -220,18 +220,103 @@ body {
   font-family: "avenir-demi-bold";
 }
 
-.about-artists__bio-content {
+.about-artists__bio-container-content {
   font-size: 13px;
   line-height: 18px;
   font-family: "avenir";
 }
 
-.about-artists__bio-content:first-of-type {
+.about-artists__bio-container-content:first-of-type {
   margin-bottom: 24px;
 }
 
-.about-artists__bio-content:not(:first-of-type) {
+.about-artists__bio-container-content:not(:first-of-type) {
   margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-artists {
+    width: 93.75%;
+  }
+  .about-artists__heading {
+    font-size: 36px;
+    line-height: 44px;
+    font-family: "avenir-bold";
+  }
+  .about-artists__image {
+    height: 362px;
+  }
+  .about-artists__quote {
+    margin-top: 24px;
+  }
+  .about-artists__quote-text {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: "avenir-bold";
+  }
+  .about-artists__quote-citation {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "avenir-demi-bold";
+  }
+  .about-artists__bio {
+    width: 100%;
+  }
+  .about-artists__bio-heading {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: "avenir-bold";
+  }
+  .about-artists__bio-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .about-artists__bio-container-content {
+    width: 48.3%;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: "avenir";
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .about-artists {
+    width: 75%;
+  }
+  .about-artists__heading {
+    margin: 48px 0;
+  }
+  .about-artists__image {
+    width: 83%;
+    margin-left: 8.5%;
+    margin-bottom: 40px;
+  }
+  .about-artists__quote {
+    width: 83%;
+    margin-left: 8.5%;
+  }
+  .about-artists__quote-text {
+    margin-bottom: 40px;
+  }
+  .about-artists__bio {
+    width: 83%;
+    margin-left: 8.5%;
+    margin-top: 56px;
+  }
+  .about-artists__bio-heading {
+    margin-bottom: 32px;
+  }
+  .about-artists__bio-container {
+    width: 97.56%;
+  }
+  .about-artists__bio-container-content {
+    width: 47.73%;
+    margin-bottom: 48px;
+  }
 }
 
 .gallery {

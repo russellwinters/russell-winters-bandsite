@@ -1,0 +1,35 @@
+[33mcommit 4c570654171f20b38175134e76e53bc4dd618b7a[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: russellwinters <russellwinters@protonmail.com>
+Date:   Wed Oct 9 15:57:51 2019 -0700
+
+    Made hero section responsive at all sizes
+
+[33mcommit 4d0d0ceed1fb186dade12972164678b342e33ca6[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: russellwinters <russellwinters@protonmail.com>
+Date:   Wed Oct 9 15:29:26 2019 -0700
+
+    Make header responsive on all sizes
+
+[33mcommit 3af159d6ded27e19df07a651021e412e20fd2798[m
+Author: russellwinters <russellwinters@protonmail.com>
+Date:   Wed Oct 9 13:30:56 2019 -0700
+
+    added header @media for tablet size
+
+[33mcommit 17c7fa376b62dda315ba7ec9baa3080808020764[m
+Author: russellwinters <russellwinters@protonmail.com>
+Date:   Wed Oct 9 13:11:43 2019 -0700
+
+    added breakpoints to scss
+
+[33mcommit cb89d63e581fa45d63aebf9f46782da4a44aab03[m
+Author: russellwinters <russellwinters@protonmail.com>
+Date:   Wed Oct 9 12:53:30 2019 -0700
+
+    changed header logo to png file
+
+[33mcommit a519cfaa5752beabc5cf313a56a8ed22f6ad2749[m
+Author: russellwinters <russellwinters@protonmail.com>
+Date:   Wed Oct 9 11:43:04 2019 -0700
+
+    first commit
