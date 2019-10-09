@@ -9,7 +9,8 @@
         "partials/_hero.scss",
         "partials/_about-artists.scss",
         "partials/_gallery.scss",
-        "partials/_footer.scss"
+        "partials/_footer.scss",
+        "partials/_breakpoints.scss"
     ],
     "names": [],
     "file": "main.css"
