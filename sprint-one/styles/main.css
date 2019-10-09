@@ -110,6 +110,24 @@ body {
   .page-header__navigation {
     width: 30%;
     height: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "avenir-demi-bold";
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .page-header__logo {
+    margin: unset;
+    padding-left: 12.5%;
+    width: 25%;
+  }
+  .page-header__navigation-list-item {
+    width: 18.5%;
+    margin-left: 13%;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "avenir-demi-bold";
   }
 }
 
