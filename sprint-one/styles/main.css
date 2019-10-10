@@ -469,4 +469,93 @@ body {
   font-size: 13px;
   padding-bottom: 40px;
 }
+
+@media only screen and (min-width: 768px) {
+  .footer__heading {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 93.75%;
+  }
+  .footer__heading-caption {
+    font-size: 36px;
+    line-height: 44px;
+    font-family: "avenir-bold";
+  }
+  .footer__heading-media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .footer__heading-media-link {
+    padding: 0 16px;
+  }
+  .footer__heading-image {
+    display: unset;
+  }
+  .footer-flex {
+    width: 93.75%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .footer-flex__container {
+    width: 31.11%;
+  }
+  .footer__copyright {
+    width: 93.75%;
+    margin-left: unset;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer__heading {
+    width: 75%;
+    margin: unset;
+    padding-bottom: 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .footer-flex {
+    margin: unset;
+    width: 75%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .footer-flex__container {
+    width: 23.33%;
+  }
+  .footer__copyright {
+    margin: unset;
+    width: 75%;
+  }
+}
 /*# sourceMappingURL=main.css.map */
