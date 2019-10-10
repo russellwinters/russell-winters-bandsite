@@ -355,6 +355,42 @@ body {
   width: 100%;
 }
 
+@media only screen and (min-width: 768px) {
+  .gallery-title {
+    margin-left: 3.13%;
+    font-size: 36px;
+    line-height: 44px;
+    font-family: "avenir-bold";
+  }
+  .gallery-container {
+    width: 93.75%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .gallery-container__image-box {
+    width: 31.11%;
+    margin-bottom: 24px;
+  }
+  .gallery-container__image-box-content {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .gallery-title {
+    width: 75%;
+    margin: 0 auto;
+  }
+  .gallery-container {
+    width: 75%;
+    margin: 0 auto;
+  }
+  .gallery-container__image-box {
+    width: 31.8%;
+  }
+}
+
 .footer {
   width: 100%;
   color: #fafafa;

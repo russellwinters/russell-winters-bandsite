@@ -29,3 +29,45 @@
 
     }
 }
+
+@include medium {
+    .gallery {
+    
+        &-title {
+            margin-left: 3.13%;
+            @include header;
+        }
+    
+        &-container {
+            width: 93.75%;
+            justify-content: space-between;
+    
+            &__image-box {
+                width: 31.11%;
+                margin-bottom: 24px;
+    
+                &-content {
+                    width: 100%;
+                }
+            } 
+        }
+    }
+}
+
+@include large {
+    .gallery {
+        &-title {
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        &-container {
+            width: 75%;
+            margin: 0 auto;
+
+            &__image-box {
+                width: 31.8%;
+            }
+        }
+    }
+}
