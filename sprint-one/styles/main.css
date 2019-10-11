@@ -196,6 +196,7 @@ body {
 
 .about-artists__image {
   width: 100%;
+  min-height: 145px;
 }
 
 .about-artists__quote-text, .about-artists__quote-citation {
@@ -244,7 +245,7 @@ body {
     font-family: "avenir-bold";
   }
   .about-artists__image {
-    height: 362px;
+    min-height: 362px;
   }
   .about-artists__quote {
     margin-top: 24px;
@@ -294,6 +295,7 @@ body {
     width: 83%;
     margin-left: 8.5%;
     margin-bottom: 40px;
+    min-height: 450px;
   }
   .about-artists__quote {
     width: 83%;
@@ -345,6 +347,7 @@ body {
 .gallery-container__image-box {
   width: 100%;
   margin-bottom: 16px;
+  min-height: 162px;
 }
 
 .gallery-container__image-box:last-of-type {
@@ -355,6 +358,9 @@ body {
   width: 100%;
 }
 
+/* Issue I'm having - the padding bottom on the original size doesn't want to dissapear 
+on a larger size. WHen I unset it, the padding on :last-of-type is gone, but the space is 
+then occupied by the "content" of the box, and all ensuing boxes*/
 @media only screen and (min-width: 768px) {
   .gallery-title {
     margin-left: 3.13%;
@@ -370,7 +376,6 @@ body {
   }
   .gallery-container__image-box {
     width: 31.11%;
-    margin-bottom: 24px;
   }
   .gallery-container__image-box-content {
     width: 100%;
@@ -388,6 +393,7 @@ body {
   }
   .gallery-container__image-box {
     width: 31.8%;
+    margin-bottom: 24px;
   }
 }
 

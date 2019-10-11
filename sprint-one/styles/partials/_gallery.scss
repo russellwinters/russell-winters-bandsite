@@ -17,6 +17,7 @@
         &__image-box {
             width: 100%;
             margin-bottom: 16px;
+            min-height: 162px;
 
             &:last-of-type {
                 padding-bottom: 32px;
@@ -26,9 +27,12 @@
                 width: 100%;
             }
         }
-
     }
 }
+
+/* Issue I'm having - the padding bottom on the original size doesn't want to dissapear 
+on a larger size. WHen I unset it, the padding on :last-of-type is gone, but the space is 
+then occupied by the "content" of the box, and all ensuing boxes*/
 
 @include medium {
     .gallery {
@@ -44,11 +48,17 @@
     
             &__image-box {
                 width: 31.11%;
-                margin-bottom: 24px;
+                // padding-bottom: 0;
+                // margin-bottom: 24px;
     
+                // &:last-of-type {
+                //     padding-bottom: unset;
+                // }
+                
                 &-content {
                     width: 100%;
                 }
+                
             } 
         }
     }
@@ -67,6 +77,7 @@
 
             &__image-box {
                 width: 31.8%;
+                margin-bottom: 24px;
             }
         }
     }
