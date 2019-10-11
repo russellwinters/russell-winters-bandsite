@@ -10,8 +10,7 @@
 
     &-caption {
       @include mobile-header;
-      // !following styles to compensate for typography differences from mockups
-      padding: 24px 0;
+      padding: 24px 0; // !Styles to compensate for typography differences from mockups
     }
 
     &-media {
