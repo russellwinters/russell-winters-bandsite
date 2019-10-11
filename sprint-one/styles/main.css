@@ -164,9 +164,10 @@ body {
     height: 400px;
   }
   .hero__text {
-    font-size: 60px;
-    line-height: 68px;
+    font-size: 36px;
+    line-height: 44px;
     font-family: "avenir-bold";
+    width: 50%;
   }
 }
 
@@ -176,7 +177,11 @@ body {
     width: 100%;
   }
   .hero__text {
+    font-size: 60px;
+    line-height: 68px;
+    font-family: "avenir-bold";
     margin-left: 12.5%;
+    width: 40%;
   }
 }
 
@@ -254,6 +259,7 @@ body {
     font-size: 24px;
     line-height: 32px;
     font-family: "avenir-bold";
+    width: 80%;
   }
   .about-artists__quote-citation {
     font-size: 16px;
@@ -342,16 +348,13 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding-bottom: 32px;
 }
 
 .gallery-container__image-box {
   width: 100%;
-  margin-bottom: 16px;
+  padding-bottom: 16px;
   min-height: 162px;
-}
-
-.gallery-container__image-box:last-of-type {
-  padding-bottom: 32px;
 }
 
 .gallery-container__image-box-content {
@@ -373,11 +376,13 @@ then occupied by the "content" of the box, and all ensuing boxes*/
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    padding-bottom: unset;
   }
   .gallery-container__image-box {
-    width: 31.11%;
+    width: calc((100% - 48px) / 3);
   }
   .gallery-container__image-box-content {
+    min-height: 126px;
     width: 100%;
   }
 }
@@ -390,10 +395,10 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   .gallery-container {
     width: 75%;
     margin: 0 auto;
+    padding-bottom: 16px;
   }
   .gallery-container__image-box {
-    width: 31.8%;
-    margin-bottom: 24px;
+    padding-bottom: 24px;
   }
 }
 
@@ -469,8 +474,9 @@ then occupied by the "content" of the box, and all ensuing boxes*/
 
 .footer__copyright {
   width: 65%;
+  font-size: 13px;
+  line-height: 18px;
   font-family: "avenir";
-  font-weight: 200;
   margin-left: 5%;
   font-size: 13px;
   padding-bottom: 40px;
@@ -495,6 +501,7 @@ then occupied by the "content" of the box, and all ensuing boxes*/
     font-family: "avenir-bold";
   }
   .footer__heading-media {
+    width: 40%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -521,10 +528,23 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   .footer-flex__container {
     width: 31.11%;
   }
+  .footer-flex__container-info, .footer-flex__container-mailto {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "avenir";
+  }
+  .footer-flex__container-info--bold {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "avenir-demi-bold";
+  }
   .footer__copyright {
     width: 93.75%;
     margin-left: unset;
     margin: 0 auto;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "avenir";
   }
 }
 
@@ -549,6 +569,9 @@ then occupied by the "content" of the box, and all ensuing boxes*/
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .footer__heading-media {
+    width: 60%;
+  }
   .footer-flex {
     margin: unset;
     width: 75%;
@@ -557,7 +580,7 @@ then occupied by the "content" of the box, and all ensuing boxes*/
             justify-content: flex-start;
   }
   .footer-flex__container {
-    width: 23.33%;
+    width: 26%;
   }
   .footer__copyright {
     margin: unset;

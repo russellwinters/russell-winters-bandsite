@@ -1,138 +1,137 @@
 .about-artists {
+  width: 90%;
+  margin: 0 auto;
+  background-color: $white;
+
+  &__heading {
+    margin: 32px 0 24px 0;
+    text-transform: capitalize;
+    @include mobile-header;
+  }
+
+  &__image {
+    width: 100%;
+    min-height: 145px;
+  }
+
+  &__quote-text,
+  &__quote-citation {
+    @include mobile-subheader;
+  }
+
+  &__quote-citation {
+    margin-top: 32px;
+  }
+
+  &__bio {
+    margin-top: 40px;
     width: 90%;
-    margin: 0 auto;
-    background-color: $white;
 
-    &__heading {
-        margin: 32px 0 24px 0;
-        text-transform: capitalize;
-        @include mobile-header;
-    } 
-
-    &__image {
-        width: 100%;
-        min-height: 145px;
+    &-heading {
+      margin-bottom: 24px;
+      @include mobile-subheader;
     }
 
-    &__quote-text,
-    &__quote-citation {
-        @include mobile-subheader;
-    } 
+    &-container {
+      &-content {
+        @include mobile-paragraph-lists;
 
-    &__quote-citation {
-        margin-top: 32px;
-    }
-
-    &__bio {
-        margin-top: 40px;
-        width: 90%;
-
-        &-heading {
-            margin-bottom: 24px;
-            @include mobile-subheader;
+        &:first-of-type {
+          margin-bottom: 24px;
         }
 
-        &-container{
-            &-content {
-                @include mobile-paragraph-lists;
-                
-                &:first-of-type {
-                    margin-bottom: 24px;
-                }
-    
-                &:not(:first-of-type) {
-                    margin-bottom: 40px;
-                }
-            }    
+        &:not(:first-of-type) {
+          margin-bottom: 40px;
         }
+      }
     }
+  }
 }
 
 @include medium {
-    .about-artists {
-        width: 93.75%;
+  .about-artists {
+    width: 93.75%;
 
-        &__heading {
-            @include header;
-        }
-
-        &__image {
-            min-height: 362px;
-        }
-
-        &__quote {
-            margin-top: 24px;
-
-            &-text {
-                @include h2-header;
-            }
-
-            &-citation {
-                @include subheader;
-            }
-        }
-
-        &__bio {
-            width: 100%;
-            &-heading {
-                @include h2-header; 
-            }
-
-            &-container{
-                display: flex;
-                justify-content: space-between;
-
-                &-content {
-                    width: 48.3%;
-                    @include paragraphs;
-                }
-            }
-            
-        }
+    &__heading {
+      @include header;
     }
+
+    &__image {
+      min-height: 362px;
+    }
+
+    &__quote {
+      margin-top: 24px;
+
+      &-text {
+        @include h2-header;
+        width: 80%;
+      }
+
+      &-citation {
+        @include subheader;
+      }
+    }
+
+    &__bio {
+      width: 100%;
+      &-heading {
+        @include h2-header;
+      }
+
+      &-container {
+        display: flex;
+        justify-content: space-between;
+
+        &-content {
+          width: 48.3%;
+          @include paragraphs;
+        }
+      }
+    }
+  }
 }
 
 @include large {
-    .about-artists {
-        width: 75%;
-    
-        &__heading {
-            margin: 48px 0;
-        }
-        &__image {
-            width: 83%;
-            margin-left: 8.5%;
-            margin-bottom: 40px;
-            min-height: 450px;
-        }
+  .about-artists {
+    width: 75%;
 
-        &__quote {
-            width: 83%;
-            margin-left: 8.5%;
-            
-            &-text {
-                margin-bottom: 40px;
-            }
-        }
-
-        &__bio {
-            width: 83%;
-            margin-left: 8.5%;
-            margin-top: 56px;
-            
-            &-heading {
-                margin-bottom: 32px;
-            }
-
-            &-container {
-                width: 97.56%;
-
-                &-content {
-                    width: 47.73%;
-                    margin-bottom: 48px;
-                }
-            }
-        }
+    &__heading {
+      margin: 48px 0;
+    }
+    &__image {
+      width: 83%;
+      margin-left: 8.5%;
+      margin-bottom: 40px;
+      min-height: 450px;
     }
 
+    &__quote {
+      width: 83%;
+      margin-left: 8.5%;
+
+      &-text {
+        margin-bottom: 40px;
+      }
+    }
+
+    &__bio {
+      width: 83%;
+      margin-left: 8.5%;
+      margin-top: 56px;
+
+      &-heading {
+        margin-bottom: 32px;
+      }
+
+      &-container {
+        width: 97.56%;
+
+        &-content {
+          width: 47.73%;
+          margin-bottom: 48px;
+        }
+      }
+    }
+  }
 }
