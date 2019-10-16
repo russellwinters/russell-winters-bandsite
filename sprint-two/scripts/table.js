@@ -46,7 +46,7 @@ function createTableHeading(thisTable, keyValues) {
 }
 
 // !Function to create table data
-function createTable(thisTable, data) {
+function createTable(thisTable, obj) {
   for (var show of shows) {
     let tableRow = thisTable.insertRow();
     for (var key in show) {
@@ -62,6 +62,25 @@ function createTable(thisTable, data) {
   }
 }
 
+// !Create Mobile table
+function mobileTable(table, obj, keyValue) {
+  for (show of shows) {
+    let tHead = table.createTHead();
+    let tableRow = table.insertRow();
+    for (key of keyValue) {
+      let cell = tableRow.insertCell();
+      let keyText = document.createTextNode(key);
+      cell.appendChild(keyText);
+      // !inside of this for statement need to create cell with value of key.
+      for (key in show) {
+        let cell = tableRow.insertCell(); //!structure is correct, values are not.
+        let cellText = document.createTextNode(key); //!having trouble getting something that is NOT undefined
+        cell.appendChild(cellText);
+      }
+    }
+  }
+}
+
 // !Invoking variables
 const myTable = document.querySelector("table");
 const showKeys = Object.keys(shows[0]);
@@ -71,4 +90,8 @@ const tabletWidth = window.innerWidth;
 if (tabletWidth >= 600) {
   createTable(myTable, shows);
   createTableHeading(myTable, showKeys);
+}
+
+if (tabletWidth < 600) {
+  mobileTable(myTable, shows, showKeys);
 }
