@@ -595,7 +595,13 @@ then occupied by the "content" of the box, and all ensuing boxes*/
 
 .shows .shows__table {
   width: 95%;
+  margin-top: 10px;
   border-collapse: collapse;
+}
+
+.shows .shows__table thead tr {
+  height: 25px;
+  border-bottom: none;
 }
 
 .shows .shows__table tr {
@@ -605,10 +611,6 @@ then occupied by the "content" of the box, and all ensuing boxes*/
 
 .shows .shows__table tr td {
   text-align: center;
-}
-
-.shows .shows__table tr:first-of-type {
-  border-bottom: none;
 }
 
 .shows .shows__table .button-container a {

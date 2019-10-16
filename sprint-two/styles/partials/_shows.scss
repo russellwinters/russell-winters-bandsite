@@ -1,13 +1,20 @@
 // !Styling for @medium and @large
 
 .shows {
-  width: 95%;
+  width: 95%; //todo: check actual width
   margin: 0 auto;
 
   .shows__table {
-    width: 95%;
+    width: 95%; //todo: check actual width
+    margin-top: 10px; //todo: check real margins
     border-collapse: collapse;
 
+    & thead {
+      & tr {
+        height: 25px;
+        border-bottom: none;
+      }
+    }
     & tr {
       height: 5vh;
       border-bottom: 2px solid $mercury;
@@ -17,10 +24,10 @@
       }
     }
 
-    & tr:first-of-type {
-      border-bottom: none;
-      // text-align: center;
-    }
+    // & tr:first-of-type {
+    //   border-bottom: none;
+    //   // text-align: center;
+    // }
 
     & .button-container {
       & a {
