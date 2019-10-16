@@ -1,0 +1,620 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+@font-face {
+  font-family: "avenir";
+  src: url(../assets/global-fonts/avenir-fonts/avenir-regular.otf);
+}
+
+@font-face {
+  font-family: "avenir-demi-bold";
+  src: url(../assets/global-fonts/avenir-fonts/avenir-demi-bold.otf);
+}
+
+@font-face {
+  font-family: "avenir-bold";
+  src: url(../assets/global-fonts/avenir-fonts/avenir-bold.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: 0;
+          box-sizing: 0;
+}
+
+.page-header {
+  width: 100%;
+  height: 80px;
+  background-color: #323232;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir-demi-bold";
+}
+
+.page-header__logo {
+  margin: 0 auto;
+  display: block;
+  width: 40%;
+  height: 50%;
+  padding: 8px;
+}
+
+.page-header__navigation {
+  display: block;
+  width: 100%;
+  height: 50%;
+}
+
+.page-header__navigation-list {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.page-header__navigation-list-item {
+  height: 100%;
+  width: 50%;
+  list-style-type: none;
+  color: #fafafa;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.page-header__navigation-list-item--current-page {
+  border-bottom: 5px solid #ffffff;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .page-header__logo {
+    height: 50%;
+    width: 20%;
+    margin: 0 5%;
+  }
+  .page-header__navigation {
+    width: 30%;
+    height: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "avenir-demi-bold";
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .page-header__logo {
+    margin: unset;
+    padding-left: 12.5%;
+    width: 25%;
+    height: 60%;
+  }
+  .page-header__navigation-list-item {
+    width: 18.5%;
+    margin-left: 13%;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "avenir-demi-bold";
+  }
+}
+
+.hero {
+  height: 183px;
+  width: 100%;
+  background-image: url(../assets/images/hero-image.jfif);
+  background-size: 120% auto;
+  background-position: 60% 60%;
+  background-color: #50323232;
+  background-blend-mode: overlay;
+  position: relative;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+}
+
+.hero__text {
+  margin-left: 5%;
+  width: 65%;
+  position: absolute;
+  top: 25%;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 32px;
+  font-family: "avenir-bold";
+}
+
+@media only screen and (min-width: 768px) {
+  .hero {
+    height: 400px;
+  }
+  .hero__text {
+    font-size: 36px;
+    line-height: 44px;
+    font-family: "avenir-bold";
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero {
+    height: 670px;
+    width: 100%;
+  }
+  .hero__text {
+    font-size: 60px;
+    line-height: 68px;
+    font-family: "avenir-bold";
+    margin-left: 12.5%;
+    width: 40%;
+  }
+}
+
+.about-artists {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.about-artists__heading {
+  margin: 32px 0 24px 0;
+  text-transform: capitalize;
+  font-size: 24px;
+  line-height: 32px;
+  font-family: "avenir-bold";
+}
+
+.about-artists__image {
+  width: 100%;
+  min-height: 145px;
+}
+
+.about-artists__quote-text, .about-artists__quote-citation {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir-demi-bold";
+}
+
+.about-artists__quote-citation {
+  margin-top: 32px;
+}
+
+.about-artists__bio {
+  margin-top: 40px;
+  width: 90%;
+}
+
+.about-artists__bio-heading {
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir-demi-bold";
+}
+
+.about-artists__bio-container-content {
+  font-size: 13px;
+  line-height: 18px;
+  font-family: "avenir";
+}
+
+.about-artists__bio-container-content:first-of-type {
+  margin-bottom: 24px;
+}
+
+.about-artists__bio-container-content:not(:first-of-type) {
+  margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  .about-artists {
+    width: 93.75%;
+  }
+  .about-artists__heading {
+    font-size: 36px;
+    line-height: 44px;
+    font-family: "avenir-bold";
+  }
+  .about-artists__image {
+    min-height: 362px;
+  }
+  .about-artists__quote {
+    margin-top: 24px;
+  }
+  .about-artists__quote-text {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: "avenir-bold";
+    width: 80%;
+  }
+  .about-artists__quote-citation {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "avenir-demi-bold";
+  }
+  .about-artists__bio {
+    width: 100%;
+  }
+  .about-artists__bio-heading {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: "avenir-bold";
+  }
+  .about-artists__bio-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .about-artists__bio-container-content {
+    width: 48.3%;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: "avenir";
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .about-artists {
+    width: 75%;
+  }
+  .about-artists__heading {
+    margin: 48px 0;
+  }
+  .about-artists__image {
+    width: 83%;
+    margin-left: 8.5%;
+    margin-bottom: 40px;
+    min-height: 450px;
+  }
+  .about-artists__quote {
+    width: 83%;
+    margin-left: 8.5%;
+  }
+  .about-artists__quote-text {
+    margin-bottom: 40px;
+  }
+  .about-artists__bio {
+    width: 83%;
+    margin-left: 8.5%;
+    margin-top: 56px;
+  }
+  .about-artists__bio-heading {
+    margin-bottom: 32px;
+  }
+  .about-artists__bio-container {
+    width: 97.56%;
+  }
+  .about-artists__bio-container-content {
+    width: 47.73%;
+    margin-bottom: 48px;
+  }
+}
+
+.gallery {
+  width: 100%;
+  background-color: #fafafa;
+}
+
+.gallery-title {
+  margin-left: 5%;
+  padding: 32px 0 24px 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-family: "avenir-bold";
+}
+
+.gallery-container {
+  width: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 32px;
+}
+
+.gallery-container__image-box {
+  width: 100%;
+  padding-bottom: 16px;
+  min-height: 162px;
+}
+
+.gallery-container__image-box-content {
+  width: 100%;
+}
+
+/* Issue I'm having - the padding bottom on the original size doesn't want to dissapear 
+on a larger size. WHen I unset it, the padding on :last-of-type is gone, but the space is 
+then occupied by the "content" of the box, and all ensuing boxes*/
+@media only screen and (min-width: 768px) {
+  .gallery-title {
+    margin-left: 3.13%;
+    font-size: 36px;
+    line-height: 44px;
+    font-family: "avenir-bold";
+  }
+  .gallery-container {
+    width: 93.75%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-bottom: unset;
+  }
+  .gallery-container__image-box {
+    width: calc((100% - 48px) / 3);
+  }
+  .gallery-container__image-box-content {
+    min-height: 126px;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .gallery-title {
+    width: 75%;
+    margin: 0 auto;
+  }
+  .gallery-container {
+    width: 75%;
+    margin: 0 auto;
+    padding-bottom: 16px;
+  }
+  .gallery-container__image-box {
+    padding-bottom: 24px;
+  }
+}
+
+.footer {
+  width: 100%;
+  color: #fafafa;
+  background-color: #323232;
+}
+
+.footer__heading {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 24px;
+}
+
+.footer__heading-caption {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: "avenir-bold";
+  padding: 24px 0;
+}
+
+.footer__heading-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 40%;
+}
+
+.footer__heading-image {
+  display: none;
+}
+
+.footer-flex {
+  width: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer-flex__container {
+  margin-bottom: 24px;
+}
+
+.footer-flex__container-info {
+  margin-bottom: 8px;
+  font-size: 13px;
+  line-height: 18px;
+  font-family: "avenir";
+}
+
+.footer-flex__container-info--bold {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir-demi-bold";
+}
+
+.footer-flex__container-mailto {
+  text-decoration: none;
+  color: #fafafa;
+  font-size: 13px;
+  line-height: 18px;
+  font-family: "avenir";
+}
+
+.footer__copyright {
+  width: 65%;
+  font-size: 13px;
+  line-height: 18px;
+  font-family: "avenir";
+  margin-left: 5%;
+  font-size: 13px;
+  padding-bottom: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer__heading {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 93.75%;
+  }
+  .footer__heading-caption {
+    font-size: 36px;
+    line-height: 44px;
+    font-family: "avenir-bold";
+  }
+  .footer__heading-media {
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .footer__heading-media-link {
+    padding: 0 16px;
+  }
+  .footer__heading-image {
+    display: unset;
+  }
+  .footer-flex {
+    width: 93.75%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .footer-flex__container {
+    width: 31.11%;
+  }
+  .footer-flex__container-info, .footer-flex__container-mailto {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "avenir";
+  }
+  .footer-flex__container-info--bold {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "avenir-demi-bold";
+  }
+  .footer__copyright {
+    width: 93.75%;
+    margin-left: unset;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "avenir";
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer__heading {
+    width: 75%;
+    margin: unset;
+    padding-bottom: 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .footer__heading-media {
+    width: 60%;
+  }
+  .footer-flex {
+    margin: unset;
+    width: 75%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .footer-flex__container {
+    width: 26%;
+  }
+  .footer__copyright {
+    margin: unset;
+    width: 75%;
+  }
+}
+
+.shows {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.shows .shows__table {
+  width: 95%;
+  border-collapse: collapse;
+}
+
+.shows .shows__table tr {
+  height: 5vh;
+  border-bottom: 2px solid #e1e1e1;
+}
+
+.shows .shows__table tr td {
+  text-align: center;
+}
+
+.shows .shows__table tr:first-of-type {
+  border-bottom: none;
+}
+
+.shows .shows__table .button-container a {
+  padding: 6px 24px;
+  background-color: #323232;
+  color: #fafafa;
+  border-radius: 6px;
+}
+/*# sourceMappingURL=main.css.map */

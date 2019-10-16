@@ -1,0 +1,22 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+@import "./partials/breakpoints";
+@import "./partials/colors";
+@import "./partials/fonts";
+@import "./partials/header";
+@import "./partials/hero";
+@import "./partials/about-artists";
+@import "./partials/gallery";
+@import "./partials/footer";
+@import "./partials/shows";

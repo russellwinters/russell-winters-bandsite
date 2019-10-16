@@ -1,0 +1,76 @@
+.gallery {
+  width: 100%;
+  background-color: $alabaster;
+
+  &-title {
+    margin-left: 5%;
+    padding: 32px 0 24px 0;
+    @include mobile-header;
+  }
+
+  &-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 32px;
+
+    &__image-box {
+      width: 100%;
+      padding-bottom: 16px;
+      min-height: 162px;
+
+      &-content {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* Issue I'm having - the padding bottom on the original size doesn't want to dissapear 
+on a larger size. WHen I unset it, the padding on :last-of-type is gone, but the space is 
+then occupied by the "content" of the box, and all ensuing boxes*/
+
+@include medium {
+  .gallery {
+    &-title {
+      margin-left: 3.13%;
+      @include header;
+    }
+
+    &-container {
+      width: 93.75%;
+      justify-content: space-between;
+      padding-bottom: unset;
+
+      &__image-box {
+        width: calc((100% - 48px) / 3);
+
+        &-content {
+          min-height: 126px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@include large {
+  .gallery {
+    &-title {
+      width: 75%;
+      margin: 0 auto;
+    }
+
+    &-container {
+      width: 75%;
+      margin: 0 auto;
+      padding-bottom: 16px;
+
+      &__image-box {
+        // width: 31.8%;
+        padding-bottom: 24px;
+      }
+    }
+  }
+}

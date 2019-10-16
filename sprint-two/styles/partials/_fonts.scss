@@ -1,0 +1,88 @@
+// !: font faces bringing in the fonts I'm using
+
+@font-face {
+    font-family: "avenir";
+    src: url(../assets/global-fonts/avenir-fonts/avenir-regular.otf);
+}
+
+@font-face {
+    font-family: "avenir-demi-bold";
+    src: url(../assets/global-fonts/avenir-fonts/avenir-demi-bold.otf);
+}
+
+@font-face {
+    font-family: "avenir-bold";
+    src: url(../assets/global-fonts/avenir-fonts/avenir-bold.otf);
+}
+
+// !: Setting the new font families to a variables so they're easier to call
+
+$avenir: "avenir";
+$avenir-bold: "avenir-bold";
+$demi-bold: "avenir-demi-bold";
+
+// !: Making MOBILE mixins so that I can easily include propper font size and line height
+
+@mixin mobile-header {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: $avenir-bold;
+}
+
+@mixin mobile-subheader {
+    font-size: 14px;
+    line-height: 22px;
+    font-family: $demi-bold;
+}
+
+@mixin mobile-paragraph-lists {
+    font-size: 13px;
+    line-height: 18px;
+    font-family: $avenir;
+}
+
+// !: Making Desktop/Tablet mixins for font sizing and family.
+
+@mixin hero-header {
+    font-size: 60px;
+    line-height: 68px;
+    font-family: $avenir-bold;
+}
+
+@mixin header {
+    font-size: 36px;
+    line-height: 44px;
+    font-family: $avenir-bold;
+}
+
+@mixin h2-header {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: $avenir-bold;
+}
+
+@mixin subheader {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: $demi-bold;
+}
+
+@mixin paragraphs {
+    font-size: 14px;
+    line-height: 22px;
+    font-family: $avenir;
+}
+
+@mixin lists {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: $avenir;
+}
+
+@mixin labels {
+    font-size: 12px;
+    line-height: 20px;
+    font-family: $demi-bold;
+    text-transform: uppercase;
+    color: $silver;
+}

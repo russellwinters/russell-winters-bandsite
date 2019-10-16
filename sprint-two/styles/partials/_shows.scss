@@ -1,0 +1,37 @@
+// !Styling for @medium and @large
+
+.shows {
+  width: 95%;
+  margin: 0 auto;
+
+  .shows__table {
+    width: 95%;
+    border-collapse: collapse;
+
+    & tr {
+      height: 5vh;
+      border-bottom: 2px solid $mercury;
+
+      & td {
+        text-align: center;
+      }
+    }
+
+    & tr:first-of-type {
+      border-bottom: none;
+      // text-align: center;
+    }
+
+    & .button-container {
+      & a {
+        padding: 6px 24px;
+        background-color: $black;
+        color: $alabaster;
+        border-radius: 6px;
+      }
+      // & button { //!Styles before I removed the button for an anchor tag
+      //   text-transform: uppercase;
+      //   width: 100%;
+    }
+  }
+}
