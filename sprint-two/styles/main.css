@@ -589,34 +589,70 @@ then occupied by the "content" of the box, and all ensuing boxes*/
 }
 
 .shows {
-  width: 95%;
+  width: calc(100vw - 32px);
   margin: 0 auto;
 }
 
-.shows .shows__table {
-  width: 95%;
-  margin-top: 10px;
+.shows__header {
+  margin-top: 32px;
+  margin-bottom: 24px;
+  font-size: 24px;
+  line-height: 32px;
+  font-family: "avenir-bold";
+}
+
+.shows__table {
+  width: calc(100vw - 32px);
   border-collapse: collapse;
+  margin-bottom: 32px;
 }
 
-.shows .shows__table thead tr {
-  height: 25px;
-  border-bottom: none;
-}
-
-.shows .shows__table tr {
-  height: 5vh;
+.shows__table tr {
+  margin-top: 16px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border-bottom: 2px solid #e1e1e1;
 }
 
-.shows .shows__table tr td {
-  text-align: center;
+.shows__table tr .key-cell {
+  font-size: 12px;
+  line-height: 20px;
+  font-family: "avenir-demi-bold";
+  text-transform: uppercase;
+  color: #afafaf;
+  margin-bottom: 16px;
 }
 
-.shows .shows__table .button-container a {
-  padding: 6px 24px;
+.shows__table tr .data-cell {
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "avenir";
+  margin-bottom: 24px;
+}
+
+.shows__table tr .data-cell:first-of-type {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "avenir-demi-bold";
+}
+
+.shows__table tr .button-container {
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir-demi-bold";
+  border-radius: 6px;
   background-color: #323232;
   color: #fafafa;
-  border-radius: 6px;
+  margin-bottom: 16px;
 }
 /*# sourceMappingURL=main.css.map */

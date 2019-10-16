@@ -1,44 +1,91 @@
-// !Styling for @medium and @large
-
 .shows {
-  width: 95%; //todo: check actual width
+  width: calc(100vw - 32px);
   margin: 0 auto;
 
-  .shows__table {
-    width: 95%; //todo: check actual width
-    margin-top: 10px; //todo: check real margins
-    border-collapse: collapse;
+  &__header {
+    margin-top: 32px;
+    margin-bottom: 24px;
+    @include h2-header;
+  }
 
-    & thead {
-      & tr {
-        height: 25px;
-        border-bottom: none;
-      }
+  &__table {
+    width: calc(100vw - 32px);
+    border-collapse: collapse;
+    margin-bottom: 32px;
+
+    & tbody {
+      // width: calc(100vw - 32px);
     }
     & tr {
-      height: 5vh;
+      margin-top: 16px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
       border-bottom: 2px solid $mercury;
 
-      & td {
-        text-align: center;
+      & .key-cell {
+        @include labels;
+        margin-bottom: 16px;
       }
-    }
 
-    // & tr:first-of-type {
-    //   border-bottom: none;
-    //   // text-align: center;
-    // }
+      & .data-cell {
+        // @include mobile-paragraph-lists;
+        @include lists;
+        margin-bottom: 24px;
+      }
 
-    & .button-container {
-      & a {
-        padding: 6px 24px;
+      & .data-cell:first-of-type {
+        @include subheader;
+      }
+
+      & .button-container {
+        width: 100%;
+        padding: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        @include mobile-subheader;
+        border-radius: 6px;
         background-color: $black;
         color: $alabaster;
-        border-radius: 6px;
+        margin-bottom: 16px;
       }
-      // & button { //!Styles before I removed the button for an anchor tag
-      //   text-transform: uppercase;
-      //   width: 100%;
     }
   }
 }
+
+// !Styling for @medium and @large
+
+// .shows {
+//   width: 95%; //todo: check actual width
+//   margin: 0 auto;
+
+//   .shows__table {
+//     width: 95%; //todo: check actual width
+//     margin-top: 10px; //todo: check real margins
+//     border-collapse: collapse;
+
+//     & thead {
+//       & tr {
+//         height: 25px;
+//         border-bottom: none;
+//       }
+//     }
+//     & tr {
+//       height: 5vh;
+//       border-bottom: 2px solid $mercury;
+
+//       & td {
+//         text-align: center;
+//       }
+//     }
+
+//     & .button-container {
+//       & a {
+//         padding: 6px 24px;
+//         background-color: $black;
+//         color: $alabaster;
+//         border-radius: 6px;
+//       }
+//     }
+//   }
+// }

@@ -67,17 +67,22 @@ function mobileTable(table, obj, keyValue) {
   for (show of shows) {
     let tHead = table.createTHead();
     let tableRow = table.insertRow();
+    tableRow.className = "table-row";
     for (key of keyValue) {
       let cell = tableRow.insertCell();
+      cell.className = "key-cell";
       let keyText = document.createTextNode(key);
+      let cellText = document.createTextNode(show[key]);
       cell.appendChild(keyText);
-      // !inside of this for statement need to create cell with value of key.
-      for (key in show) {
-        let cell = tableRow.insertCell(); //!structure is correct, values are not.
-        let cellText = document.createTextNode(key); //!having trouble getting something that is NOT undefined
-        cell.appendChild(cellText);
-      }
+      let dataCell = tableRow.insertCell();
+      dataCell.className = "data-cell";
+      dataCell.appendChild(cellText);
     }
+    let btnCell = tableRow.insertCell();
+    btnCell.className = "button-container";
+    let btn = document.createElement("a");
+    btn.innerHTML = "Buy tickets";
+    btnCell.appendChild(btn);
   }
 }
 
@@ -87,11 +92,11 @@ const showKeys = Object.keys(shows[0]);
 const tabletWidth = window.innerWidth;
 
 // !Invoke functions
-if (tabletWidth >= 600) {
+if (tabletWidth >= 768) {
   createTable(myTable, shows);
   createTableHeading(myTable, showKeys);
 }
 
-if (tabletWidth < 600) {
+if (tabletWidth < 768) {
   mobileTable(myTable, shows, showKeys);
 }
