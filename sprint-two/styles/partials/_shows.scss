@@ -13,9 +13,6 @@
     border-collapse: collapse;
     margin-bottom: 32px;
 
-    & tbody {
-      // width: calc(100vw - 32px);
-    }
     & tr {
       margin-top: 16px;
       width: 100%;
@@ -53,39 +50,67 @@
   }
 }
 
-// !Styling for @medium and @large
+// !Styling for @medium
 
-// .shows {
-//   width: 95%; //todo: check actual width
-//   margin: 0 auto;
+@include medium {
+  .shows {
+    width: calc(100vw - 48px);
 
-//   .shows__table {
-//     width: 95%; //todo: check actual width
-//     margin-top: 10px; //todo: check real margins
-//     border-collapse: collapse;
+    &__header {
+      @include header;
+    }
 
-//     & thead {
-//       & tr {
-//         height: 25px;
-//         border-bottom: none;
-//       }
-//     }
-//     & tr {
-//       height: 5vh;
-//       border-bottom: 2px solid $mercury;
+    &__table {
+      width: calc(100vw - 48px);
 
-//       & td {
-//         text-align: center;
-//       }
-//     }
+      & thead {
+        & tr {
+          justify-content: flex-start;
 
-//     & .button-container {
-//       & a {
-//         padding: 6px 24px;
-//         background-color: $black;
-//         color: $alabaster;
-//         border-radius: 6px;
-//       }
-//     }
-//   }
-// }
+          & th {
+            text-align: start;
+            text-transform: uppercase;
+            @include labels;
+            width: 25%;
+          }
+        }
+      }
+
+      & tr {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: unset;
+        padding: 6px 0;
+
+        & > * {
+          width: 25%;
+        }
+
+        & .button-container {
+          width: 25%;
+          margin-bottom: unset;
+          padding: 6px;
+        }
+      }
+    }
+  }
+}
+
+@include large {
+  .shows {
+    width: calc(100vw - 360px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 48px;
+
+    &__header {
+      margin: 0;
+    }
+
+    &__table {
+      width: 74.44%;
+    }
+  }
+}

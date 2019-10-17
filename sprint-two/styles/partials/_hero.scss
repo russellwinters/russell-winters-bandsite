@@ -37,7 +37,7 @@
 @include large {
   .hero {
     height: 670px;
-    width: 100%;
+    width: 100vw; //!Had a glitch where this in a percent made my screen all wonky. For hero and header.
 
     &__text {
       @include hero-header;

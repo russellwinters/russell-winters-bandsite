@@ -174,7 +174,7 @@ body {
 @media only screen and (min-width: 1440px) {
   .hero {
     height: 670px;
-    width: 100%;
+    width: 100vw;
   }
   .hero__text {
     font-size: 60px;
@@ -654,5 +654,76 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   background-color: #323232;
   color: #fafafa;
   margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .shows {
+    width: calc(100vw - 48px);
+  }
+  .shows__header {
+    font-size: 36px;
+    line-height: 44px;
+    font-family: "avenir-bold";
+  }
+  .shows__table {
+    width: calc(100vw - 48px);
+  }
+  .shows__table thead tr {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .shows__table thead tr th {
+    text-align: start;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 20px;
+    font-family: "avenir-demi-bold";
+    text-transform: uppercase;
+    color: #afafaf;
+    width: 25%;
+  }
+  .shows__table tr {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: unset;
+    padding: 6px 0;
+  }
+  .shows__table tr > * {
+    width: 25%;
+  }
+  .shows__table tr .button-container {
+    width: 25%;
+    margin-bottom: unset;
+    padding: 6px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .shows {
+    width: calc(100vw - 360px);
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-top: 48px;
+  }
+  .shows__header {
+    margin: 0;
+  }
+  .shows__table {
+    width: 74.44%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
