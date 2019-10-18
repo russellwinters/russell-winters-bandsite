@@ -818,7 +818,6 @@ then occupied by the "content" of the box, and all ensuing boxes*/
 .comment-section {
   width: calc(100vw - 32px);
   margin: 0 auto;
-  border-bottom: 1px solid #e1e1e1;
 }
 
 .comment-section h2 {
@@ -986,6 +985,7 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   width: calc(100vw - 32px);
   margin: 0 auto;
   margin-bottom: 40px;
+  border-top: 1px solid #e1e1e1;
 }
 
 .comment-display .comment-div {
@@ -1009,7 +1009,7 @@ then occupied by the "content" of the box, and all ensuing boxes*/
 
 .comment-display .comment-div .form-content {
   width: 73.12vw;
-  padding: 0 8px;
+  padding: 0 0 0 8px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1041,5 +1041,31 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   font-family: "avenir-demi-bold";
   text-transform: uppercase;
   color: #afafaf;
+}
+
+@media only screen and (min-width: 768px) {
+  .comment-display {
+    width: calc(100vw - 248px);
+  }
+  .comment-display .comment-div .form-content {
+    padding: 0 0 0 16px;
+  }
+  .comment-display .comment-div .form-content .post-id {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .comment-display .comment-div .form-content .post-id .name-stamp {
+    padding-right: 8px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .comment-display {
+    width: 48.89vw;
+  }
+  .comment-display .comment-div .form-content {
+    width: calc(42.59vw);
+  }
 }
 /*# sourceMappingURL=main.css.map */

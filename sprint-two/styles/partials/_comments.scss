@@ -2,6 +2,8 @@
   width: calc(100vw - 32px);
   margin: 0 auto;
   margin-bottom: 40px;
+  border-top: 1px solid $mercury;
+
   & .comment-div {
     display: flex;
     padding: 24px 0;
@@ -19,7 +21,7 @@
 
     & .form-content {
       width: 73.12vw;
-      padding: 0 8px;
+      padding: 0 0 0 8px;
       display: flex;
       flex-direction: column;
 
@@ -35,6 +37,38 @@
         & .time-stamp {
           @include labels;
         }
+      }
+    }
+  }
+}
+
+@include medium {
+  .comment-display {
+    width: calc(100vw - 248px);
+
+    & .comment-div {
+      & .form-content {
+        padding: 0 0 0 16px;
+
+        & .post-id {
+          justify-content: flex-start;
+
+          & .name-stamp {
+            padding-right: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include large {
+  .comment-display {
+    width: 48.89vw;
+
+    & .comment-div {
+      & .form-content {
+        width: calc(42.59vw);
       }
     }
   }
