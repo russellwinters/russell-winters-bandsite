@@ -198,6 +198,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   padding-top: 64px;
+  color: #ffffff;
 }
 
 .hero .hero-text__subheader {
@@ -222,8 +223,8 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
-  .shows-hero iframe {
-    width: 60%;
+  .hero iframe {
+    width: calc(55vw - 48px);
     height: 200px;
     border-radius: 8px;
   }
@@ -812,5 +813,95 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   .shows__table {
     width: 74.44%;
   }
+}
+
+.comment-section {
+  width: calc(100vw - 32px);
+  margin: 0 auto;
+}
+
+.comment-section h2 {
+  padding: 32px 0 40px 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-family: "avenir-bold";
+}
+
+.comment-section .form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.comment-section .form-container #comments {
+  width: 70vw;
+}
+
+.comment-section .form-container #comments .name-container {
+  width: 100%;
+  padding-bottom: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.comment-section .form-container #comments .name-container label {
+  font-size: 12px;
+  line-height: 20px;
+  font-family: "avenir-demi-bold";
+  text-transform: uppercase;
+  color: #afafaf;
+}
+
+.comment-section .form-container #comments .name-container input {
+  margin-top: 8px;
+  padding: 6px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.comment-section .form-container #comments .comment-container {
+  padding-bottom: 12px;
+}
+
+.comment-section .form-container #comments .comment-container label {
+  font-size: 12px;
+  line-height: 20px;
+  font-family: "avenir-demi-bold";
+  text-transform: uppercase;
+  color: #afafaf;
+}
+
+.comment-section .form-container #comments .comment-container input {
+  margin-top: 8px;
+  padding: 6px;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.comment-section .form-container #comments .submit-container {
+  padding-bottom: 32px;
+}
+
+.comment-section .form-container #comments .submit-container button {
+  width: 100%;
+  padding: 8px;
+  background-color: #323232;
+  border: 1px solid #323232;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 20px;
+  font-family: "avenir-demi-bold";
+  text-transform: uppercase;
+  color: #afafaf;
+  color: #ffffff;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=main.css.map */
