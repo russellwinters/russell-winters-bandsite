@@ -835,6 +835,19 @@ then occupied by the "content" of the box, and all ensuing boxes*/
       justify-content: space-around;
 }
 
+.comment-section .form-container .image-container {
+  width: 48px;
+  height: 48px;
+  margin-top: 16px;
+}
+
+.comment-section .form-container .image-container img {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
 .comment-section .form-container #comments {
   width: 70vw;
 }
@@ -862,12 +875,13 @@ then occupied by the "content" of the box, and all ensuing boxes*/
 .comment-section .form-container #comments .name-container input {
   margin-top: 8px;
   padding: 6px;
-  border: 2px solid black;
+  border: 2px solid #323232;
   border-radius: 4px;
 }
 
 .comment-section .form-container #comments .comment-container {
   padding-bottom: 12px;
+  width: 100%;
 }
 
 .comment-section .form-container #comments .comment-container label {
@@ -882,7 +896,7 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   margin-top: 8px;
   padding: 6px;
   width: 100%;
-  border: 2px solid black;
+  border: 2px solid #afafaf;
   border-radius: 4px;
 }
 
@@ -903,5 +917,67 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   color: #afafaf;
   color: #ffffff;
   text-transform: uppercase;
+}
+
+@media only screen and (min-width: 768px) {
+  .comment-section {
+    width: calc(100vw - 48px);
+  }
+  .comment-section .form-container {
+    width: 67.7vw;
+    margin: 0 auto;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .comment-section .form-container #comments {
+    width: calc(67.7vw - 80px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .comment-section .form-container #comments .name-container input {
+    height: 32px;
+  }
+  .comment-section .form-container #comments .comment-container input {
+    height: 100px;
+  }
+  .comment-section .form-container #comments .submit-container {
+    width: 35%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .comment-section {
+    width: calc(100vw - 360px);
+  }
+  .comment-section .form-container {
+    width: 48.89vw;
+  }
+  .comment-section .form-container #comments {
+    width: 42.59vw;
+  }
+  .comment-section .form-container #comments .name-container input {
+    padding-left: 16px;
+    height: 48px;
+  }
+  .comment-section .form-container #comments .comment-container input {
+    height: 96px;
+    padding-left: 16px;
+  }
+  .comment-section .form-container #comments .submit-container {
+    padding: 12px 0 24px 0;
+  }
+  .comment-section .form-container #comments .submit-container button {
+    height: 48px;
+    width: 14.81vw;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -39,8 +39,6 @@ commentArr = [
 function renderComments(thisSection, arr) {
   for (i = 0; i < 3; i++) {
     let objNumber = i;
-    // let currentSection = document.getElementById("thisSection");
-    console.log(arr[objNumber]["comment"]);
 
     // * create div within section
     let commentContainer = document.createElement("div");
