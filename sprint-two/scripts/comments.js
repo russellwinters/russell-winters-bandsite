@@ -42,12 +42,19 @@ function renderComments(thisSection, arr) {
 
     // * create div within section
     let commentContainer = document.createElement("div");
+    commentContainer.className = "comment-div";
     thisSection.appendChild(commentContainer);
 
     //* create div inside previous div with classname.image that can be style
     let imageContainer = document.createElement("div");
     imageContainer.className = "image-container";
     commentContainer.appendChild(imageContainer);
+
+    // *create image within this container
+    let newImg = document.createElement("img");
+    newImg.hasAttribute("src");
+    newImg.setAttribute("src", "./assets/images/Mohan-muruge.jpg");
+    imageContainer.appendChild(newImg);
 
     // *  create another div for content with classname .form-content
     let formContent = document.createElement("div");

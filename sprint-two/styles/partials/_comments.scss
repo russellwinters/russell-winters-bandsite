@@ -1,0 +1,41 @@
+.comment-display {
+  width: calc(100vw - 32px);
+  margin: 0 auto;
+  margin-bottom: 40px;
+  & .comment-div {
+    display: flex;
+    padding: 24px 0;
+    border-bottom: 1px solid $mercury;
+    .image-container {
+      width: 48px;
+      height: 48px;
+
+      & img {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    & .form-content {
+      width: 73.12vw;
+      padding: 0 8px;
+      display: flex;
+      flex-direction: column;
+
+      & .post-id {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 16px;
+
+        & .name-stamp {
+          @include paragraphs;
+        }
+
+        & .time-stamp {
+          @include labels;
+        }
+      }
+    }
+  }
+}

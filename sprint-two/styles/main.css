@@ -818,6 +818,7 @@ then occupied by the "content" of the box, and all ensuing boxes*/
 .comment-section {
   width: calc(100vw - 32px);
   margin: 0 auto;
+  border-bottom: 1px solid #e1e1e1;
 }
 
 .comment-section h2 {
@@ -979,5 +980,66 @@ then occupied by the "content" of the box, and all ensuing boxes*/
     height: 48px;
     width: 14.81vw;
   }
+}
+
+.comment-display {
+  width: calc(100vw - 32px);
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.comment-display .comment-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 24px 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.comment-display .comment-div .image-container {
+  width: 48px;
+  height: 48px;
+}
+
+.comment-display .comment-div .image-container img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.comment-display .comment-div .form-content {
+  width: 73.12vw;
+  padding: 0 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.comment-display .comment-div .form-content .post-id {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 16px;
+}
+
+.comment-display .comment-div .form-content .post-id .name-stamp {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir";
+}
+
+.comment-display .comment-div .form-content .post-id .time-stamp {
+  font-size: 12px;
+  line-height: 20px;
+  font-family: "avenir-demi-bold";
+  text-transform: uppercase;
+  color: #afafaf;
 }
 /*# sourceMappingURL=main.css.map */

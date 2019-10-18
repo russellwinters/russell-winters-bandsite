@@ -1,6 +1,7 @@
 .comment-section {
   width: calc(100vw - 32px);
   margin: 0 auto;
+  border-bottom: 1px solid $mercury;
   h2 {
     padding: 32px 0 40px 0;
     @include mobile-header;
