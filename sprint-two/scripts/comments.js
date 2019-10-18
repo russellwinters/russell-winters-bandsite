@@ -9,12 +9,14 @@ const dateFunction = () => {
 };
 
 // !Testing above
-// console.log(today);
+// console.log(dateFunction());
 // console.log(commentArr[2]["comment"]);
 const today = dateFunction();
+// *Array that will be replacing OG comment section
+var tags = [];
 
 // !Array Constant
-commentArr = [
+var commentArr = [
   {
     name: "J. Cole",
     comment:
@@ -52,7 +54,6 @@ function renderComments(thisSection, arr) {
 
     // *create image within this container
     let newImg = document.createElement("img");
-    newImg.hasAttribute("src");
     newImg.setAttribute("src", "./assets/images/Mohan-muruge.jpg");
     imageContainer.appendChild(newImg);
 
@@ -86,6 +87,11 @@ function renderComments(thisSection, arr) {
     nameStamp.appendChild(nameOutput);
     timeStamp.appendChild(timeOutput);
     commentStatus.appendChild(commentOutput);
+    tags[i] = {
+      name: nameOutput,
+      comment: commentOutput,
+      timestamp: timeOutput
+    };
   }
 }
 
@@ -98,4 +104,37 @@ function renderComments(thisSection, arr) {
 
 const thisSection = document.querySelector(".comment-display");
 renderComments(thisSection, commentArr);
-// displayComment(commentArr, 1);
+
+// //todo: At the event of the submission, update array and create new text to put in it
+var form = document.querySelector("#comments");
+form.addEventListener("submit", click => {
+  click.preventDefault();
+  //todo: create variables for submitted content
+  let commentName = event.target.name.value;
+  let commentStatus = event.target.comment.value;
+  let newTimeStamp = today;
+  //todo: create object containing each variable
+  let newComment = {
+    name: commentName,
+    comment: commentStatus,
+    timestamp: newTimeStamp
+  };
+
+  //todo: unshift() object into array
+  commentArr.unshift(newComment);
+  // todo: pop() last object from array
+  // todo: rerun for statement to update comment section
+  for (i = 0; i < 3; i++) {
+    tags[i].name.nodeValue = commentArr[i]["name"];
+    tags[i].comment.nodeValue = commentArr[i]["comment"];
+    tags[i].timestamp.nodeValue = commentArr[i]["timestamp"];
+  }
+});
+
+// !for loop to put comments into section FROM object that has now been updated.
+// let commentOutput = document.createTextNode(arr[objNumber]["comment"]);
+// let nameOutput = document.createTextNode(arr[objNumber]["name"]);
+// let timeOutput = document.createTextNode(arr[objNumber]["timestamp"]);
+// nameStamp.appendChild(nameOutput);
+// timeStamp.appendChild(timeOutput);
+// commentStatus.appendChild(commentOutput);
