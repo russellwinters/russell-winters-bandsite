@@ -1,91 +1,94 @@
-// !Global Styles 
+// !Global Styles
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
 }
 
-
 .page-header {
+  width: 100%;
+  height: 80px;
+  background-color: $black;
+  @include mobile-subheader;
+
+  &__logo {
+    margin: 0 auto;
+    display: block;
+    width: 40%;
+    height: 50%;
+    padding: 8px;
+  }
+
+  &__navigation {
+    display: block;
     width: 100%;
-    height: 80px;
-    background-color: $black;
-    @include mobile-subheader;
+    height: 50%;
 
-    &__logo {
-        margin: 0 auto;
-        display: block;
-        width: 40%;
-        height: 50%;
-        padding: 8px;
-    }
+    &-list {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: nowrap;
 
-    &__navigation {
-        display: block;
-        width: 100%;
-        height: 50%;
+      &-item {
+        height: 100%;
+        width: 50%;
+        list-style-type: none;
+        color: $alabaster;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        &-list {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-wrap: nowrap;
-
-            &-item {
-                height: 100%;
-                width: 50%;
-                list-style-type: none;
-                color: $alabaster;
-                text-align: center;
-                display: flex;
-                align-items: center;
-                justify-content: center; 
-            }
-
-            &-item--current-page {
-                border-bottom: 5px solid $white;
-            }
+        &--anchor {
+          text-decoration: none;
+          color: $white;
         }
+      }
+
+      &-item--current-page {
+        border-bottom: 5px solid $white;
+      }
     }
+  }
 }
 
 @include medium {
-    .page-header {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+  .page-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
-        &__logo {
-            height: 50%;
-            width: 20%;
-            margin: 0 5%;
-        }
-
-        &__navigation {
-            width: 30%;
-            height: 100%;
-            @include subheader;
-        }
+    &__logo {
+      height: 50%;
+      width: 20%;
+      margin: 0 5%;
     }
-    
+
+    &__navigation {
+      width: 30%;
+      height: 100%;
+      @include subheader;
+    }
+  }
 }
 
 @include large {
-    .page-header {
-        &__logo {
-            margin: unset;
-            padding-left: 12.5%;
-            width: 25%;
-            height: 60%;
-        }
-
-        &__navigation {
-            &-list-item {
-                width: 18.5%;
-                margin-left: 13%;
-                @include subheader;
-            }
-        }
+  .page-header {
+    &__logo {
+      margin: unset;
+      padding-left: 12.5%;
+      width: 25%;
+      height: 60%;
     }
+
+    &__navigation {
+      &-list-item {
+        width: 18.5%;
+        margin-left: 13%;
+        @include subheader;
+      }
+    }
+  }
 }

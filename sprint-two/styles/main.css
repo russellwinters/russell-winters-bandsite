@@ -86,6 +86,11 @@ body {
           justify-content: center;
 }
 
+.page-header__navigation-list-item--anchor {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .page-header__navigation-list-item--current-page {
   border-bottom: 5px solid #ffffff;
 }
@@ -695,7 +700,7 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   margin-bottom: 32px;
 }
 
-.shows__table tr {
+.shows__table tbody .table-row {
   margin-top: 16px;
   width: 100%;
   display: -webkit-box;
@@ -708,7 +713,7 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   border-bottom: 2px solid #e1e1e1;
 }
 
-.shows__table tr .key-cell {
+.shows__table tbody .table-row .key-cell {
   font-size: 12px;
   line-height: 20px;
   font-family: "avenir-demi-bold";
@@ -717,20 +722,20 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   margin-bottom: 16px;
 }
 
-.shows__table tr .data-cell {
+.shows__table tbody .table-row td:nth-child(2) {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "avenir-demi-bold";
+}
+
+.shows__table tbody .table-row .data-cell {
   font-size: 14px;
   line-height: 20px;
   font-family: "avenir";
   margin-bottom: 24px;
 }
 
-.shows__table tr .data-cell:first-of-type {
-  font-size: 16px;
-  line-height: 24px;
-  font-family: "avenir-demi-bold";
-}
-
-.shows__table tr .button-container {
+.shows__table tbody .table-row .button-container {
   width: 100%;
   padding: 16px;
   text-align: center;
@@ -771,7 +776,7 @@ then occupied by the "content" of the box, and all ensuing boxes*/
     color: #afafaf;
     width: 25%;
   }
-  .shows__table tr {
+  .shows__table tbody .show-table__row {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -783,15 +788,29 @@ then occupied by the "content" of the box, and all ensuing boxes*/
         -ms-flex-align: center;
             align-items: center;
     margin-top: unset;
-    padding: 6px 0;
+    border-bottom: 2px solid #e1e1e1;
+    padding: 12px 0;
   }
-  .shows__table tr > * {
+  .shows__table tbody .show-table__row > * {
     width: 25%;
   }
-  .shows__table tr .button-container {
-    width: 25%;
+  .shows__table tbody .show-table__row td:first-of-type {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "avenir-demi-bold";
+  }
+  .shows__table tbody .show-table__row .button-container {
+    width: 15%;
     margin-bottom: unset;
-    padding: 6px;
+    padding: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: "avenir-demi-bold";
+    border-radius: 6px;
+    background-color: #323232;
+    color: #fafafa;
   }
 }
 
@@ -877,6 +896,7 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   padding: 6px;
   border: 2px solid #323232;
   border-radius: 4px;
+  width: 100%;
 }
 
 .comment-section .form-container #comments .comment-container {
@@ -948,6 +968,8 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   }
   .comment-section .form-container #comments .comment-container input {
     height: 100px;
+    width: 100%;
+    border: 1px solid #323232;
   }
   .comment-section .form-container #comments .submit-container {
     width: 35%;

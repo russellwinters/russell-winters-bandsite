@@ -1,6 +1,4 @@
-// !Need function to convert new Date() to current format. Have that though
-
-// *Date Function:
+// !Date Function: Unlike the button function on the table I made this up here so I could just invoke it below.
 const dateFunction = () => {
   let today = new Date();
   let dateStamp =
@@ -8,14 +6,12 @@ const dateFunction = () => {
   return dateStamp;
 };
 
-// !Testing above
-// console.log(dateFunction());
-// console.log(commentArr[2]["comment"]);
 const today = dateFunction();
-// *Array that will be replacing OG comment section
+
+// !Array that will help to replace OG comment section
 var tags = [];
 
-// !Array Constant
+// !ORIGINAL array variable. Purposefully using var because it will be changed, so no const, and I'm unclear whether let would be more acceptable here ?
 var commentArr = [
   {
     name: "J. Cole",
@@ -42,32 +38,32 @@ function renderComments(thisSection, arr) {
   for (i = 0; i < 3; i++) {
     let objNumber = i;
 
-    // * create div within section
+    //! create div within section
     let commentContainer = document.createElement("div");
     commentContainer.className = "comment-div";
     thisSection.appendChild(commentContainer);
 
-    //* create div inside previous div with classname.image that can be style
+    //! create div inside previous div with classname of .image-container that can be styled in SCSS
     let imageContainer = document.createElement("div");
     imageContainer.className = "image-container";
     commentContainer.appendChild(imageContainer);
 
-    // *create image within this container
+    //! create image within this container - I repeated this image in all comments because it's the only one we have access to.
     let newImg = document.createElement("img");
     newImg.setAttribute("src", "./assets/images/Mohan-muruge.jpg");
     imageContainer.appendChild(newImg);
 
-    // *  create another div for content with classname .form-content
+    //! create another div for content with classname .form-content
     let formContent = document.createElement("div");
     formContent.className = "form-content";
     commentContainer.appendChild(formContent);
 
-    // * create div inside previous div for name and timestamp
+    //! create div inside previous div for name and timestamp
     let postId = document.createElement("div");
     postId.className = "post-id";
     formContent.appendChild(postId);
 
-    // * input those two into that div -- may need span --
+    //! Creating spans for both the name and time part of the input.
     let nameStamp = document.createElement("span");
     nameStamp.className = "name-stamp";
     postId.appendChild(nameStamp);
@@ -75,18 +71,20 @@ function renderComments(thisSection, arr) {
     timeStamp.className = "time-stamp";
     postId.appendChild(timeStamp);
 
-    // * create div for comment then add that dext to it.
+    //! creating div for comment, just like the above inputs
     let commentStatus = document.createElement("div");
     commentStatus.className = "comment-output";
     formContent.appendChild(commentStatus);
 
-    // todo: create text node for each object value;
+    //! creating text node for each object value;
     let commentOutput = document.createTextNode(arr[objNumber]["comment"]);
     let nameOutput = document.createTextNode(arr[objNumber]["name"]);
     let timeOutput = document.createTextNode(arr[objNumber]["timestamp"]);
     nameStamp.appendChild(nameOutput);
     timeStamp.appendChild(timeOutput);
     commentStatus.appendChild(commentOutput);
+
+    // !Creating a new object that contains references for each of the text nodes - so that I can replace their content when form is submitted.
     tags[i] = {
       name: nameOutput,
       comment: commentOutput,
@@ -95,46 +93,35 @@ function renderComments(thisSection, arr) {
   }
 }
 
-// todo: new function to add single object values to section
-
-// ?Validate content to make sure we have both name and comment to submit
-// ?const form that will check to make sure the data is there, has event.preventDefault
-// ?"if" data is valid create object that will store values that were input by form
-// ?unshift object that was just created into array const. at the top of the page.
-
+// !QuerySelector for the seciton so that I can then invoke the function to render comments on following line
 const thisSection = document.querySelector(".comment-display");
 renderComments(thisSection, commentArr);
 
-// //todo: At the event of the submission, update array and create new text to put in it
+// //! Purpose of this function: at the event of submission, update array with submitted text and re-render that comment section
 var form = document.querySelector("#comments");
 form.addEventListener("submit", click => {
   click.preventDefault();
-  //todo: create variables for submitted content
+  //! create variables for submitted content
   let commentName = event.target.name.value;
   let commentStatus = event.target.comment.value;
   let newTimeStamp = today;
-  //todo: create object containing each variable
+  //! create object containing each variable with content
   let newComment = {
     name: commentName,
     comment: commentStatus,
     timestamp: newTimeStamp
   };
 
-  //todo: unshift() object into array
+  //! unshift() object into array
   commentArr.unshift(newComment);
-  // todo: pop() last object from array
-  // todo: rerun for statement to update comment section
+  //! Was thinking of making the function pop() last object from the array for the sake of storage and memory, but I figured saving the data would probably be best
+  //! run for loop to update comment section by updating the nodeValue from the particular nodes that are being referenced from tags[].
   for (i = 0; i < 3; i++) {
     tags[i].name.nodeValue = commentArr[i]["name"];
     tags[i].comment.nodeValue = commentArr[i]["comment"];
     tags[i].timestamp.nodeValue = commentArr[i]["timestamp"];
   }
-});
 
-// !for loop to put comments into section FROM object that has now been updated.
-// let commentOutput = document.createTextNode(arr[objNumber]["comment"]);
-// let nameOutput = document.createTextNode(arr[objNumber]["name"]);
-// let timeOutput = document.createTextNode(arr[objNumber]["timestamp"]);
-// nameStamp.appendChild(nameOutput);
-// timeStamp.appendChild(timeOutput);
-// commentStatus.appendChild(commentOutput);
+  //! Reset the form so it's fresh after submission.
+  form.reset();
+});

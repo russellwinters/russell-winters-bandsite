@@ -32,7 +32,7 @@ const shows = [
   }
 ];
 
-// !Create a function for the table headers
+// !Create a function for the table headers - Pretty sure this is similar to the one from class, but has it's differences.
 
 function createTableHeading(thisTable, keyValues) {
   let tHead = thisTable.createTHead();
@@ -45,12 +45,14 @@ function createTableHeading(thisTable, keyValues) {
   }
 }
 
-// !Function to create table data
+// !Function to create table data - Same as function above. Mostly similar, but I added the button Cell to these rows.
 function createTable(thisTable, obj) {
   for (var show of shows) {
     let tableRow = thisTable.insertRow();
+    tableRow.className = "show-table__row";
     for (var key in show) {
       let cell = tableRow.insertCell();
+      cell.className = "table-cell";
       let createText = document.createTextNode(show[key]);
       cell.appendChild(createText);
     }
@@ -62,7 +64,7 @@ function createTable(thisTable, obj) {
   }
 }
 
-// !Create Mobile table
+// !Create Mobile table This table was for the mobile version with a different layout. Just made it so that each object was fully displayed in one row, that I would then flex.
 function mobileTable(table, obj, keyValue) {
   for (show of shows) {
     let tHead = table.createTHead();
@@ -78,7 +80,7 @@ function mobileTable(table, obj, keyValue) {
       dataCell.className = "data-cell";
       dataCell.appendChild(cellText);
     }
-    let btnCell = tableRow.insertCell();
+    let btnCell = tableRow.insertCell(); //!Button creation for each row. I suppose I could have made a function to do this just once, then invoke it inside this function and the above one.
     btnCell.className = "button-container";
     let btn = document.createElement("a");
     btn.innerHTML = "Buy tickets";
@@ -86,12 +88,12 @@ function mobileTable(table, obj, keyValue) {
   }
 }
 
-// !Invoking variables
+// !Declaring variables
 const myTable = document.querySelector("table");
 const showKeys = Object.keys(shows[0]);
 const tabletWidth = window.innerWidth;
 
-// !Invoke functions
+// !Invoke functions inside an if statement that determines which table is placed, depending on the viewport
 if (tabletWidth >= 768) {
   createTable(myTable, shows);
   createTableHeading(myTable, showKeys);
