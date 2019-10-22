@@ -5,6 +5,7 @@ const apiKey = "9a717c8f-9d92-47f2-a204-ee2b162ac82a";
 
 // !Date Function: Unlike the button function on the table I made this up here so I could just invoke it below.
 const dateFunction = () => {
+  //this needs to change so it runs of epoch time.
   let today = new Date();
   let dateStamp =
     today.getMonth() + 1 + "/" + today.getDate() + "/" + today.getFullYear();
@@ -62,7 +63,7 @@ function renderComments(thisSection, arr) {
     //! creating text node for each object value;
     let commentOutput = document.createTextNode(arr[objNumber]["comment"]);
     let nameOutput = document.createTextNode(arr[objNumber]["name"]);
-    let timeOutput = document.createTextNode(arr[objNumber]["timestamp"]);
+    let timeOutput = document.createTextNode(arr[objNumber]["timestamp"]); //that text node gives epoch time right now. Need to change date function to run off epoch time
     nameStamp.appendChild(nameOutput);
     timeStamp.appendChild(timeOutput);
     commentStatus.appendChild(commentOutput);
@@ -95,7 +96,7 @@ form.addEventListener("submit", click => {
   //! create variables for submitted content
   let commentName = event.target.name.value;
   let commentStatus = event.target.comment.value;
-  let newTimeStamp = today;
+  let newTimeStamp = today; //Need to request the date in epoch time
   //! create object containing each variable with content
   let newComment = {
     name: commentName,
