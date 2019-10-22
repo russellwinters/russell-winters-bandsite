@@ -3,16 +3,24 @@ const projectKey = axios
   .then(resp => console.log(resp));
 const apiKey = "9a717c8f-9d92-47f2-a204-ee2b162ac82a";
 const projectURL =
-  "https://project-1-api.herokuapp.com/register?9a717c8f-9d92-47f2-a204-ee2b162ac82a"; //tried to make this URL based off of the code Along but it's not working. Also tried it without the API Key
+  "https://project-1-api.herokuapp.com/comments?api_key=9a717c8f-9d92-47f2-a204-ee2b162ac82a"; //tried to make this URL based off of the code Along but it's not working. Also tried it without the API Key
 
 // !Date Function: Unlike the button function on the table I made this up here so I could just invoke it below.
 const dateFunction = () => {
   //this needs to change so it runs of epoch time.
+  //To do so you need a variable for the epoch time, then run that variable through a new Date(variable) to output something that "today" can run.
   let today = new Date();
   let dateStamp =
     today.getMonth() + 1 + "/" + today.getDate() + "/" + today.getFullYear();
   return dateStamp;
 };
+//Function to convert epoch Times - takes epoch time as parameter
+function epochTimeFunction(num) {
+  let output = new Date(num);
+  let dateStamp =
+    output.getMonth() + 1 + "/" + output.getDate() + "/" + output.getFullYear();
+  return dateStamp;
+}
 
 const today = dateFunction();
 console.log(today);
@@ -66,7 +74,9 @@ function renderComments(thisSection, arr) {
     //! creating text node for each object value;
     let commentOutput = document.createTextNode(arr[objNumber]["comment"]);
     let nameOutput = document.createTextNode(arr[objNumber]["name"]);
-    let timeOutput = document.createTextNode(arr[objNumber]["timestamp"]); //that text node gives epoch time right now. Need to change date function to run off epoch time
+    let timeOutput = document.createTextNode(
+      epochTimeFunction(arr[objNumber]["timestamp"])
+    ); //Text Node now gives propper date from epoch time!
     nameStamp.appendChild(nameOutput);
     timeStamp.appendChild(timeOutput);
     commentStatus.appendChild(commentOutput);
@@ -99,7 +109,7 @@ form.addEventListener("submit", click => {
   //! create variables for submitted content
   let commentName = event.target.name.value;
   let commentStatus = event.target.comment.value;
-  let newTimeStamp = today; //Need to request the date in epoch time
+  let newTimeStamp = new Date().getTime(); //Need to request the date in epoch time
   //! create object containing each variable with content
   let newComment = {
     name: commentName,
@@ -114,17 +124,32 @@ form.addEventListener("submit", click => {
   for (i = 0; i < 3; i++) {
     tags[i].name.nodeValue = theGivenComments[i]["name"];
     tags[i].comment.nodeValue = theGivenComments[i]["comment"];
-    tags[i].timestamp.nodeValue = theGivenComments[i]["timestamp"];
+    tags[i].timestamp.nodeValue = epochTimeFunction(
+      theGivenComments[i]["timestamp"]
+    ); //This is me trying to output date from epoch time. Success!!
   }
 
-  axios({
-    method: "post",
-    url: "projectURL",
-    data: newComment,
-    headers: {
-      "Content-type": "application/json; charset=UTF-8"
-    }
-  }).then(response => console.log(response.data)); //Attempting to make the post, but I'm getting the good ol' error 405 - method not allowed
+  // axios({
+  //   method: "post",
+  //   url: "projectURL",
+  //   data: newComment,
+  //   headers: {
+  //     "Content-type": "application/json; charset=UTF-8"
+  //   }
+  // }).then(response => console.log(response.data)); //Attempting to make the post, but I'm getting the good ol' error 405 - method not allowed
+  // //todo: remake the commented code above
+  // axios({
+  //   method: "post",
+  //   url: projectURL,
+  //   data: newComment
+  // }).then(response => {
+  //   for (i = response.length; i > response.length - 3; i--) {
+  //     tags[i].name.nodeValue.theGivenComments[i]["name"];
+  //     tags[i].comment.nodeValue.theGivenComments[i]["comment"];
+  //     tags[i].timestamp.nodeValue.theGivenComments[i]["timestamp"];
+  //   }
+  // console.log(response);
+  // });
 
   console.log(theGivenComments);
   //! Reset the form so it's fresh after submission.
