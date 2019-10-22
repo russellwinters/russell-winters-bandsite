@@ -2,8 +2,6 @@ const projectKey = axios
   .get("https://project-1-api.herokuapp.com/register")
   .then(resp => console.log(resp));
 const apiKey = "9a717c8f-9d92-47f2-a204-ee2b162ac82a";
-const projectURL =
-  "https://project-1-api.herokuapp.com/comments?api_key=9a717c8f-9d92-47f2-a204-ee2b162ac82a"; //tried to make this URL based off of the code Along but it's not working. Also tried it without the API Key
 
 // !Date Function: Unlike the button function on the table I made this up here so I could just invoke it below.
 const dateFunction = () => {
@@ -23,7 +21,7 @@ function epochTimeFunction(num) {
 }
 
 const today = dateFunction();
-console.log(today);
+// console.log(today); //Only used this to check that today function was working 
 
 // !Array that will help to replace OG comment section
 var tags = [];
@@ -117,8 +115,16 @@ form.addEventListener("submit", click => {
     timestamp: newTimeStamp
   };
 
+//!Following lines to create object to sent to API server and then to actually send it.
+let axiosComment = {
+  name: commentName,
+  comment: commentStatus
+};
+
+axios.post("https://project-1-api.herokuapp.com/comments?api_key=b", axiosComment).then(response => console.log(response.data)); //Successfully posting to API
+
   //! unshift() object into array
-  theGivenComments.unshift(newComment); //Now when I submit a new comment I get my original array because of this, but if I switch array names this doesn't work.
+  theGivenComments.unshift(newComment); //This is only necesary so that it now updates the comment section.
   //! Was thinking of making the function pop() last object from the array for the sake of storage and memory, but I figured saving the data would probably be best
   //! run for loop to update comment section by updating the nodeValue from the particular nodes that are being referenced from tags[].
   for (i = 0; i < 3; i++) {
@@ -129,29 +135,6 @@ form.addEventListener("submit", click => {
     ); //This is me trying to output date from epoch time. Success!!
   }
 
-  // axios({
-  //   method: "post",
-  //   url: "projectURL",
-  //   data: newComment,
-  //   headers: {
-  //     "Content-type": "application/json; charset=UTF-8"
-  //   }
-  // }).then(response => console.log(response.data)); //Attempting to make the post, but I'm getting the good ol' error 405 - method not allowed
-  // //todo: remake the commented code above
-  // axios({
-  //   method: "post",
-  //   url: projectURL,
-  //   data: newComment
-  // }).then(response => {
-  //   for (i = response.length; i > response.length - 3; i--) {
-  //     tags[i].name.nodeValue.theGivenComments[i]["name"];
-  //     tags[i].comment.nodeValue.theGivenComments[i]["comment"];
-  //     tags[i].timestamp.nodeValue.theGivenComments[i]["timestamp"];
-  //   }
-  // console.log(response);
-  // });
-
-  console.log(theGivenComments);
   //! Reset the form so it's fresh after submission.
   form.reset();
 });
