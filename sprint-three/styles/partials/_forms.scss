@@ -1,0 +1,155 @@
+.comment-section {
+  width: calc(100vw - 32px);
+  margin: 0 auto;
+  // border-bottom: 1px solid $mercury;
+  h2 {
+    padding: 32px 0 40px 0;
+    @include mobile-header;
+  }
+
+  .form-container {
+    display: flex;
+    justify-content: space-around;
+
+    & .image-container {
+      width: 48px;
+      height: 48px;
+      margin-top: 16px;
+
+      & img {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    #comments {
+      width: 70vw;
+
+      .name-container {
+        width: 100%;
+        padding-bottom: 12px;
+        display: flex;
+        flex-direction: column;
+
+        label {
+          @include labels;
+        }
+
+        input {
+          margin-top: 8px;
+          padding: 6px;
+          border: 2px solid $black;
+          border-radius: 4px;
+          width: 100%;
+        }
+      }
+
+      .comment-container {
+        padding-bottom: 12px;
+        width: 100%;
+
+        label {
+          @include labels;
+        }
+
+        & input {
+          margin-top: 8px;
+          padding: 6px;
+          width: 100%;
+          border: 2px solid $silver;
+          border-radius: 4px;
+        }
+      }
+
+      .submit-container {
+        padding-bottom: 32px;
+
+        button {
+          width: 100%;
+          padding: 8px;
+          background-color: $black;
+          border: 1px solid $black;
+          border-radius: 4px;
+          @include labels;
+          color: $white;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+@include medium {
+  .comment-section {
+    width: calc(100vw - 48px);
+
+    & .form-container {
+      width: 67.7vw;
+      margin: 0 auto;
+      justify-content: space-between;
+
+      #comments {
+        width: calc(67.7vw - 80px);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .name-container {
+          & input {
+            height: 32px;
+          }
+        }
+
+        .comment-container {
+          & input {
+            height: 100px;
+            width: 100%;
+            border: 1px solid $black;
+          }
+        }
+        .submit-container {
+          width: 35%;
+        }
+      }
+    }
+  }
+}
+
+@include large {
+  .comment-section {
+    width: calc(100vw - 360px);
+
+    .form-container {
+      width: 48.89vw;
+
+      #comments {
+        width: 42.59vw;
+
+        .name-container {
+          & input {
+            padding-left: 16px;
+            height: 48px;
+          }
+        }
+
+        .comment-container {
+          & input {
+            height: 96px;
+            padding-left: 16px;
+          }
+        }
+
+        .submit-container {
+          padding: 12px 0 24px 0;
+
+          & button {
+            height: 48px;
+            width: 14.81vw;
+          }
+        }
+      }
+    }
+  }
+}
