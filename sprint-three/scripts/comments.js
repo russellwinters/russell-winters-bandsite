@@ -21,7 +21,7 @@ function epochTimeFunction(num) {
 }
 
 const today = dateFunction();
-// console.log(today); //Only used this to check that today function was working 
+// console.log(today); //Only used this to check that today function was working
 
 // !Array that will help to replace OG comment section
 var tags = [];
@@ -115,13 +115,18 @@ form.addEventListener("submit", click => {
     timestamp: newTimeStamp
   };
 
-//!Following lines to create object to sent to API server and then to actually send it.
-let axiosComment = {
-  name: commentName,
-  comment: commentStatus
-};
+  //!Following lines to create object to sent to API server and then to actually send it.
+  let axiosComment = {
+    name: commentName,
+    comment: commentStatus
+  };
 
-axios.post("https://project-1-api.herokuapp.com/comments?api_key=b", axiosComment).then(response => console.log(response.data)); //Successfully posting to API
+  axios
+    .post(
+      "https://project-1-api.herokuapp.com/comments?api_key=russellkey",
+      axiosComment
+    )
+    .then(response => console.log(response.data)); //Successfully posting to API with key of "russellkey". Checked and it's posting.
 
   //! unshift() object into array
   theGivenComments.unshift(newComment); //This is only necesary so that it now updates the comment section.

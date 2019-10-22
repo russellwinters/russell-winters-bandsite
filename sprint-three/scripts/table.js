@@ -99,13 +99,11 @@ const myTable = document.querySelector("table");
 const showKeys = Object.keys(shows[0]);
 const tabletWidth = window.innerWidth;
 
-var thePropperData = [];
-var theNewShows = [];
 const theShowTable = axios
   .get("https://project-1-api.herokuapp.com/showdates?api_key=" + apiKey)
   .then(response => {
-    theNewShows += response.data; //It's not returning ANYTHING, whether I push it into theNewShows, unshift, or +=. I don't get it.
-    //I had other stuff going on but it's done too.
+    console.log(response.data);
+    console.log(response.data[2]);
   });
 
 // !Invoke functions inside an if statement that determines which table is placed, depending on the viewport
