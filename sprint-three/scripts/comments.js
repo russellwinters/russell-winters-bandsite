@@ -2,6 +2,8 @@ const projectKey = axios
   .get("https://project-1-api.herokuapp.com/register")
   .then(resp => console.log(resp));
 const apiKey = "9a717c8f-9d92-47f2-a204-ee2b162ac82a";
+const projectURL =
+  "https://project-1-api.herokuapp.com/register?9a717c8f-9d92-47f2-a204-ee2b162ac82a"; //tried to make this URL based off of the code Along but it's not working. Also tried it without the API Key
 
 // !Date Function: Unlike the button function on the table I made this up here so I could just invoke it below.
 const dateFunction = () => {
@@ -13,6 +15,7 @@ const dateFunction = () => {
 };
 
 const today = dateFunction();
+console.log(today);
 
 // !Array that will help to replace OG comment section
 var tags = [];
@@ -113,6 +116,16 @@ form.addEventListener("submit", click => {
     tags[i].comment.nodeValue = theGivenComments[i]["comment"];
     tags[i].timestamp.nodeValue = theGivenComments[i]["timestamp"];
   }
+
+  axios({
+    method: "post",
+    url: "projectURL",
+    data: newComment,
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  }).then(response => console.log(response.data)); //Attempting to make the post, but I'm getting the good ol' error 405 - method not allowed
+
   console.log(theGivenComments);
   //! Reset the form so it's fresh after submission.
   form.reset();
