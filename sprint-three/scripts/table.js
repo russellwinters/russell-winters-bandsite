@@ -1,7 +1,7 @@
 const projectKey = axios
   .get("https://project-1-api.herokuapp.com/register")
   .then(resp => console.log(resp));
-const apiKey = "9a717c8f-9d92-47f2-a204-ee2b162ac82a";
+const apiKey = "cebfdd3d-88b0-47ea-b979-a12d8aa847f7";
 
 // !Object that contains all show information
 const shows = [
@@ -99,13 +99,14 @@ const myTable = document.querySelector("table");
 const showKeys = Object.keys(shows[0]);
 const tabletWidth = window.innerWidth;
 
+var thePropperData = [];
 var theNewShows = [];
 const theShowTable = axios
   .get("https://project-1-api.herokuapp.com/showdates?api_key=" + apiKey)
   .then(response => {
-    theNewShows = response.data;
+    theNewShows += response.data; //It's not returning ANYTHING, whether I push it into theNewShows, unshift, or +=. I don't get it.
+    //I had other stuff going on but it's done too.
   });
-console.log(theNewShows);
 
 // !Invoke functions inside an if statement that determines which table is placed, depending on the viewport
 if (tabletWidth >= 768) {
