@@ -123,7 +123,7 @@ form.addEventListener("submit", click => {
 
   axios
     .post(
-      "https://project-1-api.herokuapp.com/comments?api_key=russellkey",
+      `https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`,
       axiosComment
     )
     .then(response => console.log(response.data)); //Successfully posting to API with key of "russellkey". Checked and it's posting.
