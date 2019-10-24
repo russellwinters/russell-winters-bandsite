@@ -15,38 +15,67 @@
     border-collapse: collapse;
     margin-bottom: 32px;
 
-    & tbody {
-      & .table-row {
-        margin-top: 16px;
-        width: 100%;
+    & .table-container {
+      display: "";
+
+      &__row {
         display: flex;
         flex-direction: column;
+        padding-bottom: 16px;
         border-bottom: 2px solid $mercury;
+        margin-bottom: 24px;
+        @include lists;
 
-        & .key-cell {
-          @include labels;
-          margin-bottom: 16px;
-        }
-
-        & td:nth-child(2) {
-          @include subheader;
-        }
-
-        & .data-cell {
-          @include lists;
+        &-dates {
+          display: flex;
+          flex-direction: column;
           margin-bottom: 24px;
+
+          &-stamp {
+            margin-bottom: 16px;
+            @include labels;
+          }
+
+          &-value {
+            @include mobile-subheader;
+          }
+        }
+        &-venue {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 24px;
+
+          &-stamp {
+            margin-bottom: 16px;
+            @include labels;
+          }
         }
 
-        & .button-container {
+        &-location {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 32px;
+
+          &-stamp {
+            margin-bottom: 16px;
+            @include labels;
+          }
+        }
+
+        &-button {
           width: 100%;
-          padding: 16px;
-          text-align: center;
-          text-transform: uppercase;
-          @include mobile-subheader;
-          border-radius: 6px;
+          height: 48px;
           background-color: $black;
-          color: $alabaster;
-          margin-bottom: 16px;
+          color: $white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 6px;
+
+          & a {
+            @include subheader;
+            text-transform: uppercase;
+          }
         }
       }
     }
@@ -64,52 +93,6 @@
     &__table {
       width: calc(100vw - 48px);
       display: table;
-
-      & thead {
-        & tr {
-          justify-content: flex-start;
-
-          & th {
-            text-align: start;
-            text-transform: uppercase;
-            @include labels;
-            width: 25%;
-          }
-        }
-      }
-
-      & tbody {
-        & .show-table__row {
-          flex-direction: row;
-          justify-content: space-evenly;
-          align-items: center;
-          margin-top: unset;
-          border-bottom: 2px solid $mercury;
-          padding: 12px 0;
-
-          & > * {
-            width: 25%;
-          }
-
-          & td:first-of-type {
-            @include subheader;
-          }
-
-          & .button-container {
-            //! Had this section working early in week, but now the margins aren't applying and my inspector says it's gathering styles from _forms.scss
-            //! I don't understand how that could possibly be happening. Don't think I messed up anything else when I tried to fix it though
-            width: 15%;
-            margin-bottom: unset;
-            padding: 8px;
-            text-align: center;
-            text-transform: uppercase;
-            @include mobile-subheader;
-            border-radius: 6px;
-            background-color: $black;
-            color: $alabaster;
-          }
-        }
-      }
     }
   }
 }

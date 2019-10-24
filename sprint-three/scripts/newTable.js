@@ -24,10 +24,10 @@ function createTable(arr) {
     tableRow.appendChild(showDates);
     //In dates div create spans that will hold the content
     let dateStamp = document.createElement("span");
-    dateStamp.classList.add(".table-container__row-dates--stamp");
+    dateStamp.classList.add("table-container__row-dates-stamp");
     showDates.appendChild(dateStamp);
     let dateValue = document.createElement("span");
-    dateValue.classList.add("table-container__row-dates--value");
+    dateValue.classList.add("table-container__row-dates-value");
     showDates.appendChild(dateValue);
 
     //Populate row with venue div
@@ -36,10 +36,10 @@ function createTable(arr) {
     tableRow.appendChild(showVenue);
     //Spans for content about venues
     let venueStamp = document.createElement("span");
-    venueStamp.classList.add("table-container__row-venue--stamp");
+    venueStamp.classList.add("table-container__row-venue-stamp");
     showVenue.appendChild(venueStamp);
     let venueValue = document.createElement("span");
-    venueValue.classList.add("table-container__row-venue--value");
+    venueValue.classList.add("table-container__row-venue-value");
     showVenue.appendChild(venueValue);
 
     //Populate row with location div
@@ -48,10 +48,10 @@ function createTable(arr) {
     tableRow.appendChild(showLocation);
     //spans for content about locations
     let locationStamp = document.createElement("span");
-    locationStamp.classList.add("table-container__row-location--stamp");
+    locationStamp.classList.add("table-container__row-location-stamp");
     showLocation.appendChild(locationStamp);
     let locationValue = document.createElement("span");
-    locationValue.classList.add("table-container__row-location--value");
+    locationValue.classList.add("table-container__row-location-value");
     showLocation.appendChild(locationValue);
 
     //add button to row.
