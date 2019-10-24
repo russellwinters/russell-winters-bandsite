@@ -28,7 +28,8 @@ var tags = [];
 
 // !Function that will render the first three objects inside our array at the top.
 function renderComments(thisSection, arr) {
-  for (i = 0; i < 3; i++) {
+  for (i = 0; i < arr.length; i++) {
+    // if this breaks it was i < 3
     let objNumber = i;
 
     //! create div within section
@@ -126,13 +127,14 @@ form.addEventListener("submit", click => {
       `https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`,
       axiosComment
     )
-    .then(response => console.log(response.data)); //Successfully posting to API with key of "russellkey". Checked and it's posting.
+    .then(response => console.log(response.data));
 
   //! unshift() object into array
   theGivenComments.unshift(newComment); //This is only necesary so that it now updates the comment section.
   //! Was thinking of making the function pop() last object from the array for the sake of storage and memory, but I figured saving the data would probably be best
   //! run for loop to update comment section by updating the nodeValue from the particular nodes that are being referenced from tags[].
-  for (i = 0; i < 3; i++) {
+  for (i = 0; i < tags.length; i++) {
+    //if this breaks it's same issue as above
     tags[i].name.nodeValue = theGivenComments[i]["name"];
     tags[i].comment.nodeValue = theGivenComments[i]["comment"];
     tags[i].timestamp.nodeValue = epochTimeFunction(
