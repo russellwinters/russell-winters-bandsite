@@ -43,6 +43,13 @@
           border: 2px solid $black;
           border-radius: 4px;
           width: 100%;
+          background-color: $alabaster;
+          color: $black;
+        }
+
+        & input::placeholder {
+          @include paragraphs;
+          color: $black;
         }
       }
 
@@ -60,6 +67,12 @@
           width: 100%;
           border: 2px solid $silver;
           border-radius: 4px;
+          background-color: $alabaster;
+        }
+
+        & input::placeholder {
+          @include paragraphs;
+          color: $black;
         }
       }
 

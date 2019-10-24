@@ -744,6 +744,36 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   border: 2px solid #323232;
   border-radius: 4px;
   width: 100%;
+  background-color: #fafafa;
+  color: #323232;
+}
+
+.comment-section .form-container #comments .name-container input::-webkit-input-placeholder {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir";
+  color: #323232;
+}
+
+.comment-section .form-container #comments .name-container input:-ms-input-placeholder {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir";
+  color: #323232;
+}
+
+.comment-section .form-container #comments .name-container input::-ms-input-placeholder {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir";
+  color: #323232;
+}
+
+.comment-section .form-container #comments .name-container input::placeholder {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir";
+  color: #323232;
 }
 
 .comment-section .form-container #comments .comment-container {
@@ -765,6 +795,35 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   width: 100%;
   border: 2px solid #afafaf;
   border-radius: 4px;
+  background-color: #fafafa;
+}
+
+.comment-section .form-container #comments .comment-container input::-webkit-input-placeholder {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir";
+  color: #323232;
+}
+
+.comment-section .form-container #comments .comment-container input:-ms-input-placeholder {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir";
+  color: #323232;
+}
+
+.comment-section .form-container #comments .comment-container input::-ms-input-placeholder {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir";
+  color: #323232;
+}
+
+.comment-section .form-container #comments .comment-container input::placeholder {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenir";
+  color: #323232;
 }
 
 .comment-section .form-container #comments .submit-container {
