@@ -57,6 +57,7 @@ function createTable(arr) {
     let locationValue = document.createElement("span");
     locationValue.classList.add("table-container__row-location--value");
     showLocation.appendChild(locationValue);
+
     //add button to row.
     let buyTickets = document.createElement("div");
     buyTickets.classList.add("table-container__row-button");
@@ -64,9 +65,22 @@ function createTable(arr) {
     let ticketLink = document.createElement("a");
     ticketLink.classList.add("table-container__row-button-value");
     buyTickets.appendChild(ticketLink);
-    //create Text node for each input
 
+    //create Text node for each input
+    let dateStampText = document.createTextNode("Dates");
+    let dateValueText = document.createTextNode(arr[i]["date"]);
+    let venueStampText = document.createTextNode("Venue");
+    let venueValueText = document.createTextNode(arr[i]["venue"]);
+    let locationStampText = document.createTextNode("Location");
+    let locationValueText = document.createTextNode(arr[i]["location"]);
+    let buttonText = document.createTextNode("Buy Tickets");
     //append text nodes where needed
+    dateStamp.appendChild(dateStampText);
+    venueStamp.appendChild(venueStampText);
+    locationStamp.appendChild(locationStampText);
+    dateValue.appendChild(dateValueText);
+    venueValue.appendChild(venueValueText);
+    locationValue.appendChild(locationValueText);
   }
 }
 
