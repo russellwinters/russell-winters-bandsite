@@ -1,16 +1,12 @@
-//Going to try to make a table then fill it using data from API
+//API Project key
+const showKey =
+  "https://project-1-api.herokuapp.com/showdates?api_key=9a717c8f-9d92-47f2-a204-ee2b162ac82a";
 
 // Create function that takes in one array as a parameter and outputs the whole table.
-//! Variable for queryselector
-//! create large div for the entire table
-//!for loop that:
-//! creates rowDiv,
-//!contentDiv,
-//!and spans,
-//!then populates each with a textNode. Fill text not with appropriate content.
 
 function createTable(arr) {
-  let container = document.querySelector(".show-table-two");
+  // let container = document.querySelector(".show-table-two");
+  let container = document.querySelector(".shows__table");
   let tableDiv = document.createElement("div");
   tableDiv.classList.add("table-container");
   container.appendChild(tableDiv);
@@ -70,7 +66,7 @@ function createTable(arr) {
     let dateStampText = document.createTextNode("Dates");
     let dateValueText = document.createTextNode(arr[i]["date"]);
     let venueStampText = document.createTextNode("Venue");
-    let venueValueText = document.createTextNode(arr[i]["venue"]);
+    let venueValueText = document.createTextNode(arr[i]["place"]);
     let locationStampText = document.createTextNode("Location");
     let locationValueText = document.createTextNode(arr[i]["location"]);
     let buttonText = document.createTextNode("Buy Tickets");
@@ -81,30 +77,13 @@ function createTable(arr) {
     dateValue.appendChild(dateValueText);
     venueValue.appendChild(venueValueText);
     locationValue.appendChild(locationValueText);
+    ticketLink.appendChild(buttonText);
   }
 }
 
-let myArr = [
-  {
-    date: "today",
-    venue: "Terminal 5",
-    location: "NYC"
-  },
-  {
-    date: "today",
-    venue: "Terminal 5",
-    location: "NYC"
-  },
-  {
-    date: "today",
-    venue: "Terminal 5",
-    location: "NYC"
-  },
-  {
-    date: "today",
-    venue: "Terminal 5",
-    location: "NYC"
-  }
-];
-
-createTable(myArr);
+//Axios to get showdates dataand call the function within
+const theShowDates = axios
+  .get(
+    "https://project-1-api.herokuapp.com/showdates?api_key=9a717c8f-9d92-47f2-a204-ee2b162ac82a"
+  )
+  .then(response => createTable(response.data));
