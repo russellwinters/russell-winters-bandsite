@@ -1080,6 +1080,25 @@ then occupied by the "content" of the box, and all ensuing boxes*/
     width: calc(100vw - 48px);
     display: table;
   }
+  .shows__table .table-container {
+    display: "";
+  }
+  .shows__table .table-container__row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .shows__table .table-container__row-dates, .shows__table .table-container__row-venue, .shows__table .table-container__row-location, .shows__table .table-container__row-button {
+    width: 25%;
+    padding-right: 8px;
+  }
+  .shows__table .table-container .element-gone {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -1099,6 +1118,17 @@ then occupied by the "content" of the box, and all ensuing boxes*/
   }
   .shows__table {
     width: 74.44%;
+  }
+  .shows__table .table-container {
+    display: "";
+  }
+  .shows__table .table-container__row {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .shows__table .table-container__row-dates, .shows__table .table-container__row-venue, .shows__table .table-container__row-location, .shows__table .table-container__row-button {
+    width: 20%;
   }
 }
 /*# sourceMappingURL=main.css.map */

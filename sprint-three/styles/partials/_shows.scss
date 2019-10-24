@@ -93,6 +93,26 @@
     &__table {
       width: calc(100vw - 48px);
       display: table;
+
+      & .table-container {
+        display: "";
+
+        &__row {
+          flex-direction: row;
+          align-items: center;
+
+          &-dates,
+          &-venue,
+          &-location,
+          &-button {
+            width: 25%;
+            padding-right: 8px;
+          }
+        }
+        .element-gone {
+          display: none;
+        }
+      }
     }
   }
 }
@@ -111,6 +131,21 @@
 
     &__table {
       width: 74.44%;
+
+      & .table-container {
+        display: "";
+
+        &__row {
+          justify-content: space-between;
+
+          &-dates,
+          &-venue,
+          &-location,
+          &-button {
+            width: 20%;
+          }
+        }
+      }
     }
   }
 }

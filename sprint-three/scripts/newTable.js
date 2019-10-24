@@ -78,6 +78,12 @@ function createTable(arr) {
     venueValue.appendChild(venueValueText);
     locationValue.appendChild(locationValueText);
     ticketLink.appendChild(buttonText);
+    //additional class for spans that will need to hide on larger displays
+    if (i > 0) {
+      dateStamp.classList.add("element-gone");
+      venueStamp.classList.add("element-gone");
+      locationStamp.classList.add("element-gone");
+    }
   }
 }
 
