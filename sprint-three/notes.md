@@ -1,4 +1,11 @@
-List of things to do:
+List of things to
 
-- Remake JS for tables so that I can invoke just one function to create a table that is not actually a table, but a div that can be resized in CSS. Fully responsive off one function. Will make the table section accessing with APIs easier.
-  -Need to create a function that takes one argument, the array, and for the first six objects I create a container with the date, venue and location tags.
+- Logo doesn't match mockups properly, specifically in terms of responsiveness.
+- Photo gallery must e responsive in all dimensions, including between breakpoints.
+- Iframe must be positioned and also look similar to the mockups.
+
+Diving Deeper options:
+
+- Hovering efffects on image gallery
+- Dynamic timestamp (tells you time since post)
+- Delete button for comment section 

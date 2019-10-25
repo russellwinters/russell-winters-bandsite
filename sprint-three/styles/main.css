@@ -44,7 +44,7 @@ body {
   font-family: "avenir-demi-bold";
 }
 
-.page-header__logo {
+.page-header__logo-container-content {
   margin: 0 auto;
   display: block;
   width: 40%;
@@ -107,10 +107,14 @@ body {
         -ms-flex-align: center;
             align-items: center;
   }
-  .page-header__logo {
-    height: 50%;
+  .page-header__logo-container {
+    height: 40%;
     width: 20%;
-    margin: 0 5%;
+  }
+  .page-header__logo-container-content {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
   }
   .page-header__navigation {
     width: 30%;
@@ -122,11 +126,16 @@ body {
 }
 
 @media only screen and (min-width: 1440px) {
-  .page-header__logo {
+  .page-header__logo-container {
+    margin-left: 180px;
+    width: 15%;
+    height: 50%;
+  }
+  .page-header__logo-container-content {
     margin: unset;
     padding-left: 12.5%;
-    width: 25%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
   }
   .page-header__navigation-list-item {
     width: 18.5%;

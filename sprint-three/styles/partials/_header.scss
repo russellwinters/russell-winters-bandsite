@@ -11,12 +11,14 @@
   background-color: $black;
   @include mobile-subheader;
 
-  &__logo {
-    margin: 0 auto;
-    display: block;
-    width: 40%;
-    height: 50%;
-    padding: 8px;
+  &__logo-container {
+    &-content {
+      margin: 0 auto;
+      display: block;
+      width: 40%;
+      height: 50%;
+      padding: 8px;
+    }
   }
 
   &__navigation {
@@ -60,10 +62,14 @@
     justify-content: flex-start;
     align-items: center;
 
-    &__logo {
-      height: 50%;
+    &__logo-container {
+      height: 40%;
       width: 20%;
-      margin: 0 5%;
+      &-content {
+        height: 100%;
+        width: 80%;
+        margin: 0 auto;
+      }
     }
 
     &__navigation {
@@ -76,11 +82,17 @@
 
 @include large {
   .page-header {
-    &__logo {
-      margin: unset;
-      padding-left: 12.5%;
-      width: 25%;
-      height: 60%;
+    &__logo-container {
+      margin-left: 180px;
+      width: 15%;
+      height: 50%;
+
+      &-content {
+        margin: unset;
+        padding-left: 12.5%;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     &__navigation {
