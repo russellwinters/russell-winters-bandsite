@@ -20,16 +20,12 @@ function epochTimeFunction(num) {
   return dateStamp;
 }
 
-const today = dateFunction();
-// console.log(today); //Only used this to check that today function was working
-
 // Array that will help to replace OG comment section
 var tags = [];
 
 // Function that will render the first three objects inside our array at the top.
 function renderComments(thisSection, arr) {
-  for (i = 0; i < arr.length; i++) {
-    // if this breaks it was i < 3
+  for (i = arr.length - 1; i >= 0; i--) {
     let objNumber = i;
 
     // create div within section
@@ -79,13 +75,6 @@ function renderComments(thisSection, arr) {
     nameStamp.appendChild(nameOutput);
     timeStamp.appendChild(timeOutput);
     commentStatus.appendChild(commentOutput);
-
-    // Creating a new object that contains references for each of the text nodes - so that I can replace their content when form is submitted.
-    tags[i] = {
-      name: nameOutput,
-      comment: commentOutput,
-      timestamp: timeOutput
-    };
   }
 }
 
@@ -100,11 +89,11 @@ const theCommentSection = axios
     theGivenComments = response.data;
     renderComments(thisSection, theGivenComments);
   });
+
+//Create function to delete elements. Const used below to replace old section
 const newSection = document.createElement("section"); // this section is going to replace the current section so that I can re-render the entire section upon comment suubmission.
-//Create function to delete elements
+
 function deleteComments() {
-  // let section = document.querySelector(".comment-display");
-  // newSection = document.createElement("section");
   newSection.classList.add("comment-display");
   thisSection.replaceWith(newSection);
 }
@@ -136,25 +125,16 @@ form.addEventListener("submit", click => {
     )
     .then(response => console.log(response.data));
 
-  // unshift() object into array
-  theGivenComments.unshift(newComment); //This is only necesary so that it now updates the comment section.
+  // push object into array
+  theGivenComments.push(newComment);
+  //Delete the previous comment section so that I can re-render it with the new updated information
   deleteComments();
+
   renderComments(newSection, theGivenComments); //this will work if I can delete last renderComments(section, arr) iteration
-  // run for loop to update comment section by updating the nodeValue from the particular nodes that are being referenced from tags[].
-  for (i = 0; i < tags.length; i++) {
-    //if this breaks it's same issue as above
-    tags[i].name.nodeValue = theGivenComments[i]["name"];
-    tags[i].comment.nodeValue = theGivenComments[i]["comment"];
-    tags[i].timestamp.nodeValue = epochTimeFunction(
-      theGivenComments[i]["timestamp"]
-    ); //This is me trying to output date from epoch time. Success!!
-  }
 
   // Reset the form so it's fresh after submission.
   form.reset();
 });
 
 //Thinking to make the comments render in the right order, while also having the new comments refresh in the correct order have line 133 act as:
-//     - theGivenComments.push(newComment)
-//     - Have renderComments() for loop act as i = arr.length - 1; i >= 0; i--
-//     - idea that the loop would then render and post according to the reverse order of the array.
+//     - instead of dealing with those new comments and all that, just re-fetch the original data after I've posted it back to the API.
