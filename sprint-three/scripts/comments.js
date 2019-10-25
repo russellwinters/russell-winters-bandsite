@@ -115,7 +115,7 @@ form.addEventListener("submit", click => {
     comment: commentStatus,
     timestamp: newTimeStamp
   };
-
+  tags.push(newComment);
   //!Following lines to create object to sent to API server and then to actually send it.
   let axiosComment = {
     name: commentName,
@@ -131,7 +131,7 @@ form.addEventListener("submit", click => {
 
   //! unshift() object into array
   theGivenComments.unshift(newComment); //This is only necesary so that it now updates the comment section.
-  //! Was thinking of making the function pop() last object from the array for the sake of storage and memory, but I figured saving the data would probably be best
+  //* renderComments(thisSection, theGivenComments); //this will work if I can delete last renderComments(section, arr) iteration
   //! run for loop to update comment section by updating the nodeValue from the particular nodes that are being referenced from tags[].
   for (i = 0; i < tags.length; i++) {
     //if this breaks it's same issue as above
@@ -145,3 +145,9 @@ form.addEventListener("submit", click => {
   //! Reset the form so it's fresh after submission.
   form.reset();
 });
+
+//*Having an issue where it isn't wanting to render another comment. do I have to create another in this section? Could I delete the old comment section and recall renderComments()?
+//Thinking to make the comments render in the right order, while also having the new comments refresh in the correct order have line 133 act as:
+//     - theGivenComments.push(newComment)
+//     - Have renderComments() for loop act as i = arr.length - 1; i >= 0; i--
+//     - idea that the loop would then render and post according to the reverse order of the array.
